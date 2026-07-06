@@ -1,0 +1,61 @@
+[
+  {
+    "role": "Frontend Engineer",
+    "company": "NEN Group",
+    "company_url": "https://nengrp.com/",
+    "start_date": "January 2024",
+    "end_date": "",
+    "duration": "",
+    "location": "Tejgaon, Dhaka, Bangladesh",
+    "work_type": "Onsite",
+    "role_description": [
+      "Led a news publishing project that involved complex state management and high interactivity based on user events, utilizing factory and observer patterns to ensure scalability and responsiveness.",
+      "Successfully migrated the entire application from React.js to Next.js, enhancing SEO capabilities and improving overall performance.",
+      "Published two portfolio projects on ThemeForest, achieving a total of 80 sales."
+    ],
+    "tech_stack": [
+      "JavaScript",
+      "TypeScript",
+      "React.js",
+      "Next.js",
+      "Tailwind"
+    ]
+  },
+  {
+    "role": "Software Engineer",
+    "company": "Tech Serve4 U",
+    "company_url": "https://ts4u.us/",
+    "start_date": "July 2022",
+    "end_date": "December 2023",
+    "duration": "1.6 years",
+    "location": "Michigan, United States",
+    "work_type": "Remote",
+    "role_description": [
+      "Optimized and maintained multiple internal applications using Next.js, JavaScript, and SASS, which significantly improved performance and scalability.",
+      "Implemented and optimized microservices architecture, utilizing RabbitMQ for efficient messaging and communication between services.",
+      "Contributed to the design and implementation of complex database queries for high-performance data retrieval."
+    ],
+    "tech_stack": ["Node.js", "Next.js", "MongoDb", "Express.js", "Microservice"]
+  },
+  {
+    "role": "Software Engineer Intern",
+    "company": "EverExpert",
+    "company_url": "https://everexpert.com/",
+    "start_date": "May 2022",
+    "end_date": "June 2022",
+    "duration": "2 months",
+    "location": "Mirpur, Dhaka, Bangladesh",
+    "work_type": "Remote",
+    "role_description": [
+      "Contributed to designing the eCommerce category page at Bazar360 using Angular and SASS",
+      "Worked with the Bazar360 team to build responsive UI components, ensuring cross-browser compatibility."
+    ],
+    "tech_stack": [
+      "React.js",
+      "Nodejs",
+      "React Native",
+      "SASS"
+    ]
+  }
+  
+]
