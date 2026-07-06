@@ -120,46 +120,110 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* GitHub contribution graph */}
-        <div
-          style={{
-            marginTop: "2.5rem",
-            background: "var(--card-bg)",
-            border: "1px solid var(--border)",
-            borderRadius: "10px",
-            overflow: "hidden",
-            boxShadow: "0 1px 3px rgba(0,0,0,0.02)"
-          }}
-        >
-          <div 
-            style={{ 
-              padding: "0.85rem 1.25rem", 
-              borderBottom: "1px solid var(--border)", 
-              display: "flex", 
-              alignItems: "center", 
-              gap: "8px",
-              background: "var(--bg)"
-            }}
-          >
-            <FaGithub size={15} color="var(--fg)" />
-            <h3 style={{ margin: 0, fontSize: '14.5px', fontWeight: '600', color: 'var(--fg)' }}>
-              Commits & Activity
-            </h3>
-          </div>
-          <div style={{ padding: "1.25rem", overflowX: "auto" }}>
-            <img
-              src="https://ghchart.rshah.org/737373/Protik111"
-              alt="Protik111's GitHub chart"
+        <div style={{ marginTop: "3.5rem", display: "flex", flexDirection: "column", gap: "1.5rem", paddingBottom: "2rem" }}>
+          {/* Terminal Block */}
+          <div>
+            <div
               style={{
-                minWidth: "750px",
-                width: "100%",
-                display: "block",
+                background: "#0d1117",
+                border: "1px solid var(--border)",
+                borderRadius: "10px",
+                overflow: "hidden",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
+                fontFamily: "var(--font-mono)"
               }}
-              onError={(e) => {
-                e.target.style.display = "none";
-              }}
-            />
+            >
+              <div style={{ padding: "0.75rem 1rem", display: "flex", alignItems: "center", gap: "6px", borderBottom: "1px solid #30363d" }}>
+                <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#ff5f56" }} />
+                <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#ffbd2e" }} />
+                <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#27c93f" }} />
+                <div style={{ marginLeft: "10px", fontSize: "12px", color: "#8b949e" }}>protik@env: ~</div>
+              </div>
+              <div style={{ padding: "1.25rem", fontSize: "13.5px", lineHeight: "1.7", color: "#c9d1d9", overflowX: "auto" }}>
+                <p style={{ margin: "0 0 0.5rem" }}>
+                  <span style={{ color: "#7ee787" }}>$</span> whoami
+                </p>
+                <p style={{ margin: "0 0 1rem", color: "#8b949e" }}>
+                  System Architect & Full-stack Engineer
+                </p>
+                <p style={{ margin: "0 0 0.5rem" }}>
+                  <span style={{ color: "#7ee787" }}>$</span> ./deploy --env production
+                </p>
+                <p style={{ margin: 0, color: "#8b949e" }}>
+                  [OK] Packaging microservices...<br/>
+                  [OK] Provisioning AWS infrastructure...<br/>
+                  <span style={{ color: "#79c0ff" }}>➜ System successfully deployed to production!</span>
+                </p>
+              </div>
+            </div>
           </div>
+
+          {/* Current Status Card */}
+          <div>
+            <div
+              style={{
+                background: "var(--card-bg)",
+                border: "1px solid var(--border)",
+                borderRadius: "10px",
+                padding: "1.5rem",
+                display: "flex",
+                flexDirection: "column",
+                gap: "1rem"
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                <div style={{ width: 8, height: 8, background: "#22c55e", borderRadius: "50%", boxShadow: "0 0 8px #22c55e" }} />
+                <h3 style={{ margin: 0, fontSize: "15px", fontWeight: "600", color: "var(--fg)" }}>Current Status</h3>
+              </div>
+              <div style={{ fontSize: "14.5px", color: "var(--muted)", lineHeight: "1.6" }}>
+                <p style={{ margin: "0 0 0.5rem" }}>
+                  <strong style={{ color: "var(--fg)" }}>✓</strong> Actively building scalable microservices and cloud-native solutions.
+                </p>
+                <p style={{ margin: "0 0 0.5rem" }}>
+                  <strong style={{ color: "var(--fg)" }}>✓</strong> Exploring event-driven architectures with RabbitMQ.
+                </p>
+                <p style={{ margin: 0 }}>
+                  <strong style={{ color: "var(--fg)" }}>✓</strong> Architecting highly available distributed systems.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Key Metrics Grid */}
+          <div>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
+                gap: "1rem"
+              }}
+            >
+              {[
+                { label: "Years Exp.", value: "4+" },
+                { label: "Microservices", value: "3+" },
+                { label: "Cloud Platforms", value: "AWS" },
+              ].map((stat) => (
+                <div
+                  key={stat.label}
+                  style={{
+                    padding: "1rem 1.25rem",
+                    borderLeft: "3px solid var(--fg)",
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <div style={{ fontSize: "28px", fontWeight: "700", color: "var(--fg)", marginBottom: "2px" }}>
+                    {stat.value}
+                  </div>
+                  <div style={{ fontSize: "13px", color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.5px" }}>
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          
         </div>
       </div>
     </section>
