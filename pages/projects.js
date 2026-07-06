@@ -1,32 +1,29 @@
 import React from "react";
 import Header from "../components/Header";
-import BaseLayout from "../components/Wrapper/BaseLayout";
-import BaseText from "../components/Wrapper/BaseText";
-import Seo from "../components/Seo";
-import { Box } from "@chakra-ui/react";
 import Footer from "../components/Footer";
+import Seo from "../components/Seo";
 
 const Projects = () => {
   return (
     <React.Fragment>
       <Seo title="Projects" />
-      <Box>
+      <div style={{ minHeight: "100vh", background: "var(--bg)", color: "var(--fg)" }}>
         <header>
           <Header />
         </header>
-        <main>
-          <BaseLayout>
-            <BaseText
-              firstTitle="Projects"
-              secondTitle="Softwares"
-              textIcon="https://ik.imagekit.io/ayushsoni1010/Website/projects?ik-sdk-version=javascript-1.4.3&updatedAt=1669666353424"
-            />
-          </BaseLayout>
+        <main style={{ paddingTop: "6rem" }}>
+          <div className="container-wide">
+            <h1 className="section-heading">Projects</h1>
+            <p style={{ color: "var(--muted)", marginBottom: "2rem", fontSize: "14px" }}>
+              Things I&apos;ve built and shipped.
+            </p>
+            <p style={{ color: "var(--muted)", fontSize: "14px" }}>
+              Project details coming soon — stay tuned!
+            </p>
+          </div>
         </main>
-        <footer>
-          <Footer />
-        </footer>
-      </Box>
+        <Footer />
+      </div>
     </React.Fragment>
   );
 };

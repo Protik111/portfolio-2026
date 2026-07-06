@@ -1,36 +1,46 @@
 import NextLink from "next/link";
-import {
-  Box,
-  Heading,
-  Text,
-  Container,
-  Divider,
-  Button,
-} from "@chakra-ui/react";
 import React from "react";
 import Seo from "../components/Seo";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const NotFound = () => {
   return (
     <React.Fragment>
       <Seo title="Not Found" />
-      <Container m="auto" mt="20">
-        <Heading as="h1">Not found</Heading>
-        <Text>The page you&apos;re looking for was not found.</Text>
-        <Divider my={6} />
-        <Box my={6} align="start">
-          <NextLink href="/" passHref>
-            <Button
-              type="button"
-              variant="solid"
-              colorScheme="teal"
-              bgGradient="linear(to-r, teal.500, green.400)"
+      <div style={{ minHeight: "100vh", background: "var(--bg)", color: "var(--fg)" }}>
+        <Header />
+        <main
+          style={{
+            paddingTop: "8rem",
+            paddingBottom: "4rem",
+            textAlign: "center",
+          }}
+        >
+          <div className="container-narrow">
+            <p className="mono" style={{ color: "var(--muted)", marginBottom: "0.5rem" }}>
+              404
+            </p>
+            <h1
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontSize: "2.5rem",
+                fontWeight: 700,
+                marginBottom: "1rem",
+              }}
             >
-              Return to home
-            </Button>
-          </NextLink>
-        </Box>
-      </Container>
+              Page not found
+            </h1>
+            <p style={{ color: "var(--muted)", marginBottom: "2rem" }}>
+              The page you&apos;re looking for doesn&apos;t exist.
+            </p>
+            <NextLink href="/" className="btn-neo" style={{ fontSize: "14px", padding: "7px 18px" }}>
+              ← Back home
+            </NextLink>
+          </div>
+        </main>
+        <Footer />
+      </div>
     </React.Fragment>
   );
 };

@@ -1,158 +1,172 @@
-import React from "react";
-import dynamic from "next/dynamic";
-import VoxelDogLoader from "../DevDog/blender-dog";
-import BaseLayout from "../Wrapper/BaseLayout";
-import {
-  Button,
-  VStack,
-  Flex,
-  Stack,
-  Heading,
-  Text,
-  Link,
-  ButtonGroup,
-} from "@chakra-ui/react";
-import SocialProfiles from "./SocialProfiles";
-
-const LazyVoxelDog = dynamic(() => import("../DevDog"), {
-  ssr: false,
-  loading: () => <VoxelDogLoader />,
-});
+import React, { useState, useEffect } from "react";
+import NextLink from "next/link";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { HiOutlineMail } from "react-icons/hi";
 
 const Hero = () => {
+  const [time, setTime] = useState("");
+
+  useEffect(() => {
+    const tick = () => {
+      const now = new Date();
+      setTime(
+        now.toLocaleTimeString("en-US", {
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: false,
+          timeZone: "Asia/Dhaka",
+        }) + " (GMT+6)"
+      );
+    };
+    tick();
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
-    <React.Fragment>
-      <BaseLayout>
-        <VStack
-          m="auto"
-          my="10"
-          mt={{ base: 10, md: 10, lg: 10, sm: 10, xs: "4em" }}
-          zIndex="100"
+    <section style={{ paddingTop: "6rem", paddingBottom: "2rem" }}>
+      <div className="container-narrow">
+        {/* Live clock */}
+        <p
+          className="mono"
+          style={{ color: "var(--muted)", marginBottom: "1.75rem" }}
         >
-          {/* <Link
-            href="https://github.com/ayushsoni1010"
-            textDecoration="none"
-            isExternal={true}
-            style={{ textDecoration: "none" }}
-          >
-            <Button
-              borderRadius="full"
-              borderColor="blue.600"
-              h="30px"
-              fontSize={{ base: "sm", sm: "sm", xs: "xs" }}
-              borderWidth="2px"
-            >
-              Hello, I&apos;m a Full Stack Developer based in Bangladesh
-            </Button>
-          </Link> */}
-        </VStack>
-        <Flex
-          // display={{ base: "flex", md: "flex", sm: "block", xs: "block" }}
-          flex={{ base: 1, md: 1, sm: 0, xs: 0 }}
-          justify="space-between"
-          direction={{
-            base: "row",
-            md: "row",
-            sm: "column-reverse",
-            xs: "column-reverse",
+          {time || "──:──:── (GMT+6)"}
+        </p>
+
+        {/* Bio Card */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "0.85rem",
+            marginBottom: "1.75rem",
+            padding: "0.75rem 1rem",
+            background: "var(--card-bg)",
+            border: "1px solid var(--border)",
+            borderRadius: "10px",
+            width: "fit-content",
           }}
         >
-          <Stack>
-            <Heading
-              fontSize={{ md: "6xl", lg: "6xl", sm: "4xl", xs: "3xl" }}
-              fontWeight="extrabold"
+          <img
+            src="/profile.JPG"
+            alt="Protik"
+            width={46}
+            height={46}
+            style={{
+              borderRadius: "8px",
+              objectFit: "cover",
+              border: "1px solid var(--border)",
+              flexShrink: 0,
+            }}
+          />
+          <div>
+            <p
+              style={{
+                fontWeight: 600,
+                fontSize: "15px",
+                color: "var(--fg)",
+                margin: 0,
+              }}
             >
-              <Stack display="flex" direction="row">
-                <Text colorScheme="black">I&apos;m</Text>
-                <Text
-                  bgGradient="linear(to-tr, teal.500, green.400)"
-                  bgClip="text"
-                >
-                  Protik,
-                </Text>
-              </Stack>
-              <Stack display="flex" direction="row">
-                <Text colorScheme="black">fullstack</Text>
-                <Text
-                  bgGradient="linear(to-tr, teal.500, green.400)"
-                  bgClip="text"
-                >
-                  developer
-                </Text>
-              </Stack>
-              {/* <Stack display="flex" direction="row">
-                <Text colorScheme="black">and</Text>
-                <Text
-                  bgGradient="linear(to-tr, teal.500, green.400)"
-                  bgClip="text"
-                >
-                  designer.
-                </Text>
-              </Stack> */}
-            </Heading>
-            <Text py="5" colorScheme="black" fontWeight="400">
-              I&apos;m a Software Engineer{" "}
-              <span
-                style={{
-                  color: "var(--chakra-colors-teal-500)",
-                  fontWeight: 500,
-                }}
-              >
-                specializing in full-stack development
-              </span>{" "}
-              with expertise in{" "}
-              <span
-                style={{
-                  color: "var(--chakra-colors-teal-500)",
-                  fontWeight: 500,
-                }}
-              >
-                JavaScript, TypeScript, React.js,
-              </span>{" "}
-              and{" "}
-              <span
-                style={{
-                  color: "var(--chakra-colors-teal-500)",
-                  fontWeight: 500,
-                }}
-              >
-                and Node.js.
-              </span>{" "}
-            </Text>
-            <ButtonGroup gap="1">
-              <Button
-                as="a"
-                target="_blank"
-                href="mailto:rafiurprotik111@gmail.com"
-                border="2px"
-                variant="solid"
-                size={{ base: "md", md: "md", sm: "sm" }}
-                colorScheme="teal"
-              >
-                Hire me
-              </Button>
-              {/* <Button
-                colorScheme="teal"
-                target="_blank"
-                as="a"
-                href="https://cal.com/ayushsoni1010/"
-                variant="solid"
-                size={{ base: "md", md: "md", sm: "sm" }}
-                bgGradient="linear(to-r, teal.500, green.400)"
-              >
-                Schedule a Meeting
-              </Button> */}
-            </ButtonGroup>
-            <Stack py="4">
-              <SocialProfiles />
-            </Stack>
-          </Stack>
-          <Stack>
-            <LazyVoxelDog />
-          </Stack>
-        </Flex>
-      </BaseLayout>
-    </React.Fragment>
+              Rafiur Rahman Protik
+            </p>
+            <p
+              style={{
+                color: "var(--muted)",
+                fontSize: "13px",
+                margin: 0,
+              }}
+            >
+              Software Engineer
+            </p>
+          </div>
+        </div>
+
+        {/* Intro text */}
+        <div
+          style={{
+            fontSize: "15px",
+            lineHeight: "1.8",
+            color: "var(--fg)",
+            marginBottom: "1rem",
+          }}
+        >
+          <p style={{ margin: "0 0 0.6rem" }}>
+            hi, i&apos;m{" "}
+            <strong>protik</strong> — a fullstack developer &amp; software engineer.{" "}
+            <a
+              href="https://github.com/Protik111"
+              target="_blank"
+              rel="noreferrer"
+              className="btn-neo"
+            >
+              <FaGithub size={12} /> GitHub
+            </a>
+          </p>
+          <p style={{ margin: "0 0 0.6rem" }}>
+            i build scalable apps using{" "}
+            <strong>TypeScript, React &amp; Node.js</strong>, always shipping.
+          </p>
+          <p style={{ margin: 0 }}>
+            got an idea worth building?{" "}
+            <a
+              href="https://www.linkedin.com/in/rafiur-rahman-protik/"
+              target="_blank"
+              rel="noreferrer"
+              className="btn-neo"
+            >
+              <FaLinkedin size={12} /> LinkedIn
+            </a>{" "}
+            OR{" "}
+            <a
+              href="mailto:rafiurprotik111@gmail.com"
+              className="btn-neo"
+            >
+              <HiOutlineMail size={13} /> Email me
+            </a>
+          </p>
+        </div>
+
+        {/* GitHub contribution graph (static image from GitHub) */}
+        <div
+          style={{
+            marginTop: "2rem",
+            padding: "1rem",
+            background: "var(--card-bg)",
+            border: "1px solid var(--border)",
+            borderRadius: "8px",
+            overflow: "hidden",
+          }}
+        >
+          <img
+            src="https://ghchart.rshah.org/737373/Protik111"
+            alt="GitHub contribution chart"
+            style={{
+              width: "100%",
+              height: "auto",
+              display: "block",
+              opacity: 0.85,
+            }}
+            onError={(e) => {
+              e.target.style.display = "none";
+            }}
+          />
+          <p
+            className="mono"
+            style={{
+              color: "var(--muted)",
+              marginTop: "0.5rem",
+              marginBottom: 0,
+              fontSize: "12px",
+            }}
+          >
+            GitHub activity
+          </p>
+        </div>
+      </div>
+    </section>
   );
 };
 

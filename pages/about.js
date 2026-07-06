@@ -1,190 +1,128 @@
-import {
-  VStack,
-  Text,
-  HStack,
-  Image,
-  Grid,
-  GridItem,
-  IconButton,
-  Box,
-  Flex,
-} from "@chakra-ui/react";
-import { GrAnnounce } from "react-icons/gr";
 import React from "react";
 import Header from "../components/Header";
-import BaseLayout from "../components/Wrapper/BaseLayout";
-import BaseText from "../components/Wrapper/BaseText";
-import SocialProfiles from "../components/Hero/SocialProfiles";
-import Seo from "../components/Seo";
 import Footer from "../components/Footer";
+import Seo from "../components/Seo";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const About = () => {
   return (
     <React.Fragment>
       <Seo title="About" />
-      <Box>
+      <div style={{ minHeight: "100vh", background: "var(--bg)", color: "var(--fg)" }}>
         <header>
           <Header />
         </header>
-        <main>
-          <BaseLayout>
-            <BaseText
-              firstTitle="About"
-              secondTitle="Developer"
-              textIcon="https://ik.imagekit.io/ayushsoni1010/Website/about?ik-sdk-version=javascript-1.4.3&updatedAt=1669666323627"
-              leftSpacing="4"
-              topSpacing="2"
-            />
-            <Grid
-              display={{
-                base: "grid",
-                md: "grid",
-                lg: "grid",
-                sm: "block",
-                xs: "block",
-              }}
-              templateColumns={{
-                md: "repeat(5, 1fr)",
-                lg: "repeat(5, 1fr)",
-              }}
-              gap={4}
-              my="10"
-            >
-              <GridItem colSpan={2}>
-                <Image
-                  src="/profile.JPG"
-                  alt="Hero"
-                  w="320px"
-                  borderRadius="10px"
-                />
-              </GridItem>
-              <GridItem
-                colStart={3}
-                colEnd={12}
-                mt={{ base: 0, md: 0, lg: 0, sm: 10, xs: 10 }}
-              >
-                <Text>
-                  👨‍🎓 This is{" "}
-                  <span
-                    style={{
-                      color: "var(--chakra-colors-teal-500)",
-                      fontWeight: 500,
-                    }}
-                  >
-                    Rafiur Rahman Protik
-                  </span>{" "}
-                  , I&apos;m a Software Engineer. I specialize in full-stack
-                  development, particularly with JavaScript and TypeScript,
-                  along with frameworks and libraries such as Node.js,
-                  Express.js, and Next.js.
-                </Text>
-                <Text mt="5">
-                  🚀 I have extensive experience in {""}
-                  <span
-                    style={{
-                      color: "var(--chakra-colors-teal-500)",
-                      fontWeight: 500,
-                    }}
-                  >
-                    Javascript and Typescript
-                  </span>
-                  Also I have experience working with databases like MongoDB and
-                  PostgreSQL, and I enjoy working with Prisma as an ORM. On the
-                  frontend, I’m familiar with React.js, Redux, and React Query,
-                  and have utilized various UI frameworks such as Ant Design,
-                  Material UI, and Mantine UI. I also work with Firebase,
-                  testing tools like Cypress and Vitest, and enjoy exploring web
-                  automation, cloud technologies, Docker.
-                </Text>
-                <HStack
-                  mt={{ base: 8, lg: 8, md: 8, sm: 10, xs: 10 }}
-                  display={{
-                    base: "block",
-                    lg: "block",
-                    md: "block",
-                    sm: "none",
-                    xs: "none",
-                  }}
-                >
-                  <SocialProfiles />
-                </HStack>
-              </GridItem>
-            </Grid>
-            <VStack
-              mt={{ base: 28, lg: 28, md: 28, sm: 20, xs: 20 }}
-              p="10"
-              spacing={4}
-              w="full"
-              borderRadius="10px"
-              color="black"
-              alignItems={"flex-start"}
-              bgGradient="linear(to-r, gray.300, yellow.400, pink.200)"
-            >
-              <Flex gap="4" alignItems={"center"}>
-                <IconButton
-                  size="lg"
-                  width={{ base: 14, lg: 14, md: 14, sm: 14, xs: 10 }}
-                  height={{ base: 14, lg: 14, md: 14, sm: 14, xs: 10 }}
-                  fontSize={{
-                    base: "3xl",
-                    lg: "3xl",
-                    md: "3xl",
-                    sm: "2xl",
-                    xs: "2xl",
-                  }}
-                  variant="solid"
-                  color="current"
-                  bg="white"
-                  icon={<GrAnnounce />}
-                />
-                <Text
-                  fontSize={{
-                    base: "4xl",
-                    lg: "4xl",
-                    md: "4xl",
-                    sm: "4xl",
-                    xs: "2xl",
-                  }}
-                  fontWeight={"bold"}
-                >
-                  Open for roles
-                </Text>
-              </Flex>
+        <main style={{ paddingTop: "6rem", paddingBottom: "4rem" }}>
+          <div className="container-narrow">
+            <h1 className="section-heading">About</h1>
 
-              <Text
-                display={{
-                  base: "block",
-                  lg: "block",
-                  md: "block",
-                  sm: "none",
-                  xs: "none",
+            {/* Profile Card */}
+            <div
+              style={{
+                display: "flex",
+                gap: "1.5rem",
+                alignItems: "flex-start",
+                marginBottom: "2rem",
+                flexWrap: "wrap",
+              }}
+            >
+              <img
+                src="/profile.JPG"
+                alt="Rafiur Rahman Protik"
+                width={140}
+                height={140}
+                style={{
+                  borderRadius: "10px",
+                  objectFit: "cover",
+                  border: "1px solid var(--border)",
+                  flexShrink: 0,
+                }}
+              />
+              <div>
+                <h2
+                  style={{
+                    fontFamily: "var(--font-sans)",
+                    fontSize: "1.25rem",
+                    fontWeight: 700,
+                    margin: "0 0 0.25rem",
+                  }}
+                >
+                  Rafiur Rahman Protik
+                </h2>
+                <p style={{ color: "var(--muted)", fontSize: "14px", margin: "0 0 1rem" }}>
+                  Software Engineer · Fullstack Developer
+                </p>
+                <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
+                  <a
+                    href="https://github.com/Protik111"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-neo"
+                  >
+                    <FaGithub size={12} /> GitHub
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/rafiur-rahman-protik/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-neo"
+                  >
+                    <FaLinkedin size={12} /> LinkedIn
+                  </a>
+                  <a href="mailto:rafiurprotik111@gmail.com" className="btn-neo">
+                    ✉ Email
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <hr className="divider" />
+
+            {/* About text */}
+            <div style={{ lineHeight: 1.8, fontSize: "15px" }}>
+              <p style={{ marginBottom: "1rem" }}>
+                👨‍🎓 I&apos;m a Software Engineer specializing in full-stack development
+                with JavaScript and TypeScript. I work extensively with Node.js, Express.js,
+                NestJS, and Next.js — building scalable, production-ready applications.
+              </p>
+              <p style={{ marginBottom: "1rem" }}>
+                🚀 I have deep experience with databases like MongoDB and PostgreSQL, and enjoy
+                working with Prisma as an ORM. On the frontend, I use React.js, Redux, and
+                React Query. I also work with Docker, cloud technologies, and CI/CD pipelines.
+              </p>
+              <p style={{ marginBottom: "2rem" }}>
+                💡 I&apos;m passionate about clean architecture, developer tooling, and meaningful
+                software. Always shipping, always learning.
+              </p>
+
+              {/* Open for roles card */}
+              <div
+                style={{
+                  padding: "1.5rem",
+                  background: "var(--card-bg)",
+                  border: "1px solid var(--border)",
+                  borderRadius: "10px",
+                  display: "flex",
+                  gap: "1rem",
+                  alignItems: "flex-start",
                 }}
               >
-                As a full stack developer, I’m eager to take on a variety of
-                roles and responsibilities across both frontend and backend
-                development. I&apos;m also open to exploring opportunities in
-                different work arrangements, including full-time positions.
-              </Text>
-              <Text
-                display={{
-                  base: "none",
-                  lg: "none",
-                  md: "none",
-                  sm: "block",
-                  xs: "block",
-                }}
-              >
-                I&apos;m a versatile developer excited about diverse roles in
-                frontend and backend development, and open to different work
-                arrangements.
-              </Text>
-            </VStack>
-          </BaseLayout>
+                <span style={{ fontSize: "1.5rem" }}>📢</span>
+                <div>
+                  <p style={{ fontWeight: 700, fontSize: "16px", margin: "0 0 0.4rem" }}>
+                    Open for roles
+                  </p>
+                  <p style={{ color: "var(--muted)", fontSize: "14px", margin: 0 }}>
+                    As a fullstack developer, I&apos;m eager for new opportunities across
+                    frontend and backend — full-time or freelance. Let&apos;s connect!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </main>
-        <footer>
-          <Footer />
-        </footer>
-      </Box>
+        <Footer />
+      </div>
     </React.Fragment>
   );
 };

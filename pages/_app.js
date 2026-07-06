@@ -1,5 +1,3 @@
-import { AnimatePresence } from "framer-motion";
-import Chakra from "../components/Chakra/chakra";
 import "../styles/global.css";
 
 if (typeof window !== "undefined") {
@@ -7,11 +5,7 @@ if (typeof window !== "undefined") {
 }
 
 function MyApp({ Component, pageProps, router }) {
-  return (
-    <Chakra cookies={pageProps.cookies}>
-      <Component {...pageProps} key={router.route} />
-    </Chakra>
-  );
+  return <Component {...pageProps} key={router.route} />;
 }
 
 export default MyApp;

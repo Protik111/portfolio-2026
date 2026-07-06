@@ -2,12 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-/***** Show custom scrollbar on screen *****/
+/* ── Google Fonts ─────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
+/* Geist Sans via Vercel CDN */
+@import url('https://fonts.cdnfonts.com/css/geist-sans');
+
+/* ── CSS Design Tokens ────────────────────────────── */
+:root {
+  --bg: #ffffff;
+  --fg: #0a0a0a;
+  --muted: #737373;
+  --card-bg: #f9f9f9;
+  --border: #e5e5e5;
+  --shadow: 2px 2px 0px #0a0a0a;
+  --shadow-hover: 3px 3px 0px #0a0a0a;
+
+  --font-sans: 'Geist Sans', 'Inter', -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+
+  --container-narrow: 680px;
+  --container-wide: 920px;
+  --nav-height: 48px;
+}
+
+/* ── Dark Mode ────────────────────────────────────── */
+[data-theme='dark'] {
+  --bg: #000000;
+  --fg: #fafafa;
+  --muted: #a3a3a3;
+  --card-bg: #0b0b0b;
+  --border: #262626;
+  --shadow: 2px 2px 0px #fafafa;
+  --shadow-hover: 3px 3px 0px #fafafa;
+}
+
+/* ── Base Styles ──────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.65;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ── Scrollbar ────────────────────────────────────── */
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-  display: unset;
+  width: 4px;
+  height: 4px;
 }
 
 ::-webkit-scrollbar-button {
@@ -17,9 +75,151 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--chakra-colors-teal-400);
+  background: var(--border);
+  border-radius: 2px;
 }
 
 ::-webkit-scrollbar-track {
-  background: white;
+  background: var(--bg);
+}
+
+/* ── Page Containers ──────────────────────────────── */
+.container-narrow {
+  max-width: var(--container-narrow);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.container-wide {
+  max-width: var(--container-wide);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+/* ── Neo-Brutalist Button ─────────────────────────── */
+.btn-neo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  font-size: 13px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  background: var(--bg);
+  color: var(--fg);
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: box-shadow 0.12s ease, transform 0.12s ease;
+  text-decoration: none;
+}
+
+.btn-neo:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translate(-1px, -1px);
+}
+
+.btn-neo:active {
+  box-shadow: 1px 1px 0 var(--fg);
+  transform: translate(1px, 1px);
+}
+
+/* ── Tech Stack Badge ─────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  font-size: 12.5px;
+  font-family: var(--font-sans);
+  background: var(--card-bg);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+/* ── Section Headings (serif) ─────────────────────── */
+.section-heading {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--fg);
+  margin-bottom: 1.25rem;
+}
+
+/* ── Monospace text ───────────────────────────────── */
+.mono {
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+/* ── Card ─────────────────────────────────────────── */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.card:hover {
+  border-color: var(--muted);
+  transform: translateY(-2px);
+}
+
+/* ── Divider ──────────────────────────────────────── */
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+/* ── Pill Nav ─────────────────────────────────────── */
+.pill-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 5px 8px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+}
+
+.pill-nav a {
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 5px 14px;
+  border-radius: 999px;
+  color: var(--muted);
+  transition: background 0.15s, color 0.15s;
+}
+
+.pill-nav a:hover,
+.pill-nav a.active {
+  background: var(--card-bg);
+  color: var(--fg);
+}
+
+/* ── Grid layouts ─────────────────────────────────── */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .section-heading {
+    font-size: 1.75rem;
+  }
 }

@@ -1,124 +1,57 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NextLink from "next/link";
-import ColorModeSwitcher from "../../utils/ThemeToggleButton";
-import {
-  Box,
-  Flex,
-  Stack,
-  Button,
-  ButtonGroup,
-  IconButton,
-  Image,
-} from "@chakra-ui/react";
-import { FiMenu } from "react-icons/fi";
-import NavItems from "./NavItems";
-import CollapseMenu from "./CollapseMenu";
-import BaseLayout from "../Wrapper/BaseLayout";
+import { useRouter } from "next/router";
+import ThemeToggleButton from "../../utils/ThemeToggleButton";
+
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/projects", label: "Projects" },
+  { href: "/blogs", label: "Blogs" },
+  { href: "/contact", label: "Contact" },
+];
 
 const Header = () => {
-  const [isOpen, setOpen] = useState(false);
+  const router = useRouter();
+  const [scrolled, setScrolled] = useState(false);
 
-  const handleToggle = () => {
-    setOpen((prevState) => !prevState);
-  };
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <React.Fragment>
-      <BaseLayout px="0" pt="0">
-        <Box
-          position="fixed"
-          top="0"
-          zIndex="10"
-          maxW="1536"
-          w="100%"
-          px={{ md: 20, lg: 20, sm: 5 }}
-        >
-          <Flex
-            backdropFilter="blur(7px)"
-            border="none"
-            minH="60px"
-            py={{ base: 3, md: 3, lg: 3, sm: 3, xs: 4 }}
-            px={{ base: 4, md: 7 }}
-            alignSelf="center"
+    <nav
+      style={{
+        position: "fixed",
+        top: "1rem",
+        left: "50%",
+        transform: "translateX(-50%)",
+        zIndex: 100,
+        transition: "box-shadow 0.2s ease",
+      }}
+    >
+      <div
+        className="pill-nav"
+        style={{
+          boxShadow: scrolled
+            ? "0 4px 20px rgba(0,0,0,0.10)"
+            : "0 1px 8px rgba(0,0,0,0.06)",
+        }}
+      >
+        {navLinks.map((link) => (
+          <NextLink
+            key={link.href}
+            href={link.href}
+            className={router.pathname === link.href ? "active" : ""}
           >
-            <Stack flex={{ base: 1, md: 1 }} direction="row" align="center">
-              <NextLink
-                href="/"
-                style={{ textDecoration: "none", cursor: "pointer" }}
-              >
-                <Image
-                  src="/bracket.png"
-                  alt="Brand Logo"
-                  w={50}
-                  h={50}
-                  cursor="pointer"
-                />
-              </NextLink>
-            </Stack>
-            <NavItems />
-            <Stack
-              flex={{ base: 1, md: 1 }}
-              justify="end"
-              direction="row"
-              align="center"
-              spacing="3"
-              mx={{
-                base: 0,
-              }}
-            >
-              <ColorModeSwitcher
-                justifySelf="flex-end"
-                display={{
-                  base: "none",
-                  md: "inline-flex",
-                  sm: "inline-flex",
-                  xs: "inline-flex",
-                }}
-                _focus={{ boxShadow: "outline" }}
-              />
-              <Box display={{ md: "none", lg: "none", sm: "flex", xs: "flex" }}>
-                <IconButton
-                  variant="outline"
-                  icon={<FiMenu />}
-                  colorScheme="teal"
-                  onClick={handleToggle}
-                  border="2px"
-                  aria-label={"Hamburger Menu"}
-                  _focus={{ boxShadow: "outline" }}
-                />
-              </Box>
-              <ButtonGroup
-                display={{ base: "flex", md: "flex", sm: "none", xs: "none" }}
-              >
-                <Button
-                  as="a"
-                  target="_blank"
-                  href="/resume"
-                  border="2px"
-                  variant="solid"
-                  size="md"
-                  colorScheme="teal"
-                >
-                  Resume
-                </Button>
-                {/* <Button
-                  colorScheme="teal"
-                  target="_blank"
-                  as="a"
-                  href="https://cal.com/ayushsoni1010/"
-                  variant="solid"
-                  size="md"
-                  bgGradient="linear(to-r, teal.500, green.400)"
-                >
-                  Schedule a Meeting
-                </Button> */}
-              </ButtonGroup>
-            </Stack>
-          </Flex>
-          <CollapseMenu isOpen={isOpen} setOpen={handleToggle} />
-        </Box>
-      </BaseLayout>
-    </React.Fragment>
+            {link.label}
+          </NextLink>
+        ))}
+        <div style={{ width: 1, height: 18, background: "var(--border)", margin: "0 4px" }} />
+        <ThemeToggleButton />
+      </div>
+    </nav>
   );
 };
 

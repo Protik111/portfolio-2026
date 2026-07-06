@@ -1,54 +1,54 @@
 import React from "react";
 import Image from "next/image";
-import { Box, Flex, IconButton } from "@chakra-ui/react";
-import BaseLayout from "../Wrapper/BaseLayout";
-import BaseText from "../Wrapper/BaseText";
-import skillDetails from "./__skillsDetails";
 
-const Skills = () => {
-  return (
-    <React.Fragment>
-      <BaseLayout id="skills">
-        <BaseText
-          id="skills-header-wrapper"
-          firstTitle="Skills"
-          secondTitle="Programming"
-          textIcon="https://ik.imagekit.io/ayushsoni1010/Website/skills?ik-sdk-version=javascript-1.4.3&updatedAt=1669666366824"
-          leftSpacing={20}
-          topSpacing={-4}
-        />
-        <Box
-          boxShadow="2xl"
-          borderRadius="3xl"
-          my="10"
-          bgColor="white"
-          id="skills-wrapper"
-        >
-          <Flex
-            gap={{ base: 16, lg: 16, md: 16, sm: 14, xs: 10 }}
-            wrap="wrap"
-            p={{ base: 10, lg: 10, md: 10, sm: 10, xs: 0 }}
-            pt={{ base: 10, lg: 10, md: 10, sm: 10, xs: 10 }}
-            pb={{ base: 10, lg: 10, md: 10, sm: 10, xs: 10 }}
-            my={{ base: 0, lg: 0, md: 0, sm: 4, xs: 10 }}
-            alignItems="center"
-            justify="center"
-          >
-            {skillDetails.map((item) => (
-              <Box key={item.key}>
-                <Image
-                  width="70"
-                  height="70"
-                  src={item.iconURL}
-                  alt={item.name}
-                  aria-label={item.name}
-                />
-              </Box>
-            ))}
-          </Flex>
-        </Box>
-      </BaseLayout>
-    </React.Fragment>
-  );
-};
-export default Skills;
+// Featured subset of the full skills list
+const techStack = [
+  { name: "Next.js", iconURL: "/assets/next-js.svg" },
+  { name: "TypeScript", iconURL: "/assets/typescript.svg" },
+  { name: "React.js", iconURL: "/assets/react.svg" },
+  { name: "Node.js", iconURL: "/assets/nodejs.svg" },
+  { name: "Express.js", iconURL: "/assets/express-js.svg" },
+  { name: "NestJS", iconURL: "/assets/nest-js.svg" },
+  { name: "JavaScript", iconURL: "/assets/javascript.svg" },
+  { name: "TailwindCSS", iconURL: "/assets/tailwind-css.svg" },
+  { name: "MongoDB", iconURL: "/assets/mongodb.svg" },
+  { name: "PostgreSQL", iconURL: "/assets/postgresql.png" },
+  { name: "Redis", iconURL: "/assets/redis.svg" },
+  { name: "Prisma", iconURL: "/assets/prisma.svg" },
+  { name: "Docker", iconURL: "/assets/docker.svg" },
+  { name: "Socket.io", iconURL: "/assets/socket-io.png" },
+  { name: "Vite", iconURL: "/assets/vite.png" },
+  { name: "Vercel", iconURL: "/assets/vercel.svg" },
+  { name: "Git", iconURL: "/assets/git.svg" },
+  { name: "GitHub Actions", iconURL: "/assets/githubactions.svg" },
+  { name: "Nginx", iconURL: "/assets/nginx.svg" },
+  { name: "AWS", iconURL: "/assets/amazon-web-services.svg" },
+];
+
+const TechStack = () => (
+  <section style={{ paddingBottom: "3.5rem" }}>
+    <div className="container-wide">
+      <h2 className="section-heading">Tech Stack</h2>
+      <p style={{ color: "var(--muted)", fontSize: "13.5px", marginBottom: "1.25rem" }}>
+        the tech arsenal behind my builds
+      </p>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+        {techStack.map((tech) => (
+          <span key={tech.name} className="badge">
+            <img
+              src={tech.iconURL}
+              alt={tech.name}
+              width={14}
+              height={14}
+              style={{ objectFit: "contain" }}
+              onError={(e) => { e.target.style.display = "none"; }}
+            />
+            {tech.name}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+export default TechStack;

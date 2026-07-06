@@ -1,227 +1,190 @@
-import {
-  Box,
-  Grid,
-  Heading,
-  Icon,
-  Stack,
-  VStack,
-  Text,
-  Flex,
-  Button,
-} from "@chakra-ui/react";
 import React from "react";
 import NextLink from "next/link";
-import BaseLayout from "../Wrapper/BaseLayout";
-import Skills from "./Skills";
-import Timeline from "./Timeline";
-import { productCardDetails } from "./__productCardDetails";
+import TechStack from "./Skills";
 
-import { IoIosRocket } from "react-icons/io";
+// Placeholder projects — will be replaced with real data later
+const featuredProjects = [
+  {
+    title: "Content Processing Platform",
+    description:
+      "Scalable, event-driven microservices platform for high-throughput content processing using RabbitMQ, NestJS, and TypeScript.",
+    tags: ["NestJS", "TypeScript", "RabbitMQ", "Docker"],
+    link: "https://github.com/Protik111",
+  },
+  {
+    title: "Collaborative Document System",
+    description:
+      "Real-time collaborative editor with block-based content, full-text search, and WebSocket synchronization.",
+    tags: ["Next.js", "Node.js", "Socket.io", "PostgreSQL"],
+    link: "https://github.com/Protik111",
+  },
+  {
+    title: "Portfolio Website",
+    description:
+      "Personal portfolio built with Next.js, featuring a clean design system inspired by minimalist aesthetics.",
+    tags: ["Next.js", "TailwindCSS", "Framer Motion"],
+    link: "https://github.com/Protik111",
+  },
+  {
+    title: "Auth Microservice",
+    description:
+      "Robust authentication microservice with JWT, refresh tokens, role-based access control, and secure session management.",
+    tags: ["Node.js", "TypeScript", "Prisma", "Redis"],
+    link: "https://github.com/Protik111",
+  },
+];
+
+const ProjectCard = ({ project }) => (
+  <a
+    href={project.link}
+    target="_blank"
+    rel="noreferrer"
+    className="card"
+    style={{ display: "block", padding: "1.1rem 1.25rem", textDecoration: "none" }}
+  >
+    <h3
+      style={{
+        fontFamily: "var(--font-sans)",
+        fontWeight: 600,
+        fontSize: "15px",
+        margin: "0 0 0.4rem",
+        color: "var(--fg)",
+      }}
+    >
+      {project.title}
+    </h3>
+    <p
+      style={{
+        color: "var(--muted)",
+        fontSize: "13.5px",
+        lineHeight: "1.6",
+        margin: "0 0 0.75rem",
+      }}
+    >
+      {project.description}
+    </p>
+    <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+      {project.tags.map((t) => (
+        <span
+          key={t}
+          className="mono"
+          style={{
+            background: "var(--bg)",
+            border: "1px solid var(--border)",
+            borderRadius: "4px",
+            padding: "1px 7px",
+            fontSize: "11.5px",
+            color: "var(--muted)",
+          }}
+        >
+          {t}
+        </span>
+      ))}
+    </div>
+  </a>
+);
 
 const Home = () => {
   return (
-    <React.Fragment>
-      <Skills />
-
-      <BaseLayout mt="10" id="stack">
-        <Heading
-          fontSize={{
-            base: "5xl",
-            md: "5xl",
-            lg: "5xl",
-            sm: "3xl",
-            xs: "3xl",
-          }}
-          fontWeight="bold"
-          textAlign="center"
-        >
-          The full product development stack.
-        </Heading>
-        <Text
-          textAlign="center"
-          fontSize={{ base: "md", md: "md", lg: "md", sm: "sm", xs: "sm" }}
-          my="5"
-          mx={{ lg: 60, md: 60, sm: 0, xs: 0 }}
-        >
-          From building the interface to developing a fully functional
-          application, I offer complete end-to-end development services. I can
-          take your idea and turn it into a high-quality app, crafted with clean
-          design and powered by cutting-edge software, covering everything from
-          frontend to backend development.
-        </Text>
-        <Box align="center" my={{ base: 20, lg: 20, md: 20, sm: 14, xs: 14 }}>
-          <Grid
-            display={{
-              base: "grid",
-              md: "grid",
-              lg: "grid",
-              sm: "block",
-              xs: "block",
+    <>
+      {/* Projects Section */}
+      <section style={{ paddingBottom: "3.5rem" }}>
+        <div className="container-wide">
+          <div
+            style={{
+              display: "flex",
+              alignItems: "baseline",
+              justifyContent: "space-between",
+              marginBottom: "1.25rem",
             }}
-            templateColumns="repeat(2,1fr)"
-            maxW="3xl"
-            gap="20"
           >
-            {productCardDetails.map(
-              (item, index) =>
-                item?.stack && (
-                  <Stack
-                    key={index}
-                    spacing="3"
-                    align="center"
-                    mt={{ md: 0, lg: 0, sm: 10, xs: 10 }}
-                  >
-                    <Box
-                      w="60px"
-                      h="60px"
-                      borderRadius="full"
-                      align="center"
-                      bg={item?.bgColor}
-                      mb="2"
-                      boxShadow="2xl"
-                      transition={"ease-in-out"}
-                      transitionDuration="0.5s"
-                      _hover={{ boxShadow: "outline" }}
-                      cursor="pointer"
-                    >
-                      <Icon mt="5" w="5" h="5">
-                        {item?.svgIcon}
-                      </Icon>
-                    </Box>
-                    <Heading fontSize="xl">{item?.title}</Heading>
-                    <Text fontSize="sm">{item?.description}</Text>
-                  </Stack>
-                )
-            )}
-          </Grid>
-        </Box>
-      </BaseLayout>
-      {/* <BaseLayout mt="24" id="product">
-        <Heading
-          fontSize={{
-            base: "5xl",
-            md: "5xl",
-            lg: "5xl",
-            sm: "3xl",
-            xs: "3xl",
-          }}
-          fontWeight="bold"
-          textAlign="center"
-        >
-          Product development, the easy way.
-        </Heading>
-        <Text
-          textAlign="center"
-          fontSize="md"
-          my="5"
-          mx={{ lg: 60, md: 60, sm: 0, xs: 0 }}
-        >
-          I provide you the following perks for your product development
-          process, and more.
-        </Text>
-        <Box align="center" my={{ base: 20, lg: 20, md: 20, sm: 10, xs: 10 }}>
-          <Grid
-            display={{
-              base: "grid",
-              md: "grid",
-              lg: "grid",
-              sm: "block",
-              xs: "block",
-            }}
-            templateColumns="repeat(2,1fr)"
-            gap="20"
-            maxW="3xl"
-          >
-            {productCardDetails.map(
-              (item, index) =>
-                !item?.stack && (
-                  <Stack
-                    key={index}
-                    spacing="3"
-                    align="center"
-                    mt={{ md: 0, lg: 0, sm: 10, xs: 10 }}
-                  >
-                    <Box
-                      w="60px"
-                      h="60px"
-                      borderRadius="full"
-                      align="center"
-                      bg={item.bgColor}
-                      mb="2"
-                      boxShadow="2xl"
-                      transition={"ease-in-out"}
-                      transitionDuration="0.5s"
-                      _hover={{ boxShadow: "outline" }}
-                      cursor="pointer"
-                    >
-                      <Icon mt="5" w="5" h="5">
-                        {item?.svgIcon}
-                      </Icon>
-                    </Box>
-                    <Heading fontSize="xl">{item?.title}</Heading>
-                    <Text fontSize="sm">{item?.description}</Text>
-                  </Stack>
-                )
-            )}
-          </Grid>
-        </Box>
-      </BaseLayout> */}
-      <BaseLayout>
-        <Flex
-          mb={{ base: 14, lg: 14, md: 14, sm: 20, xs: 20 }}
-          p="10"
-          w="full"
-          borderRadius="10px"
-          color="black"
-          alignItems={"center"}
-          justify={"space-evenly"}
-          display={{
-            base: "flex",
-            md: "flex",
-            lg: "flex",
-            sm: "block",
-            xs: "block",
-          }}
-          bgGradient="linear(to-r, gray.300, yellow.400, pink.200)"
-        >
-          <VStack alignItems={"flex-start"}>
-            <Text
-              fontSize={{
-                base: "4xl",
-                lg: "4xl",
-                md: "4xl",
-                sm: "2xl",
-                xs: "2xl",
+            <h2 className="section-heading" style={{ marginBottom: 0 }}>
+              Projects
+            </h2>
+            <NextLink
+              href="/projects"
+              style={{
+                fontSize: "13px",
+                color: "var(--muted)",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "4px",
               }}
-              fontWeight={"bold"}
             >
-              Let&apos;s Build Something Together
-            </Text>
+              View All ↗
+            </NextLink>
+          </div>
+          <div className="grid-2">
+            {featuredProjects.map((project) => (
+              <ProjectCard key={project.title} project={project} />
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <Text fontSize={"lg"}>
-              Turning ideas into real life products is my calling. Let&apos;s do
-              this.
-            </Text>
-          </VStack>
-          <NextLink href="mailto:rafiurprotik111@gmail.com" passHref>
-            <Button
-              leftIcon={<IoIosRocket />}
-              colorScheme="white"
-              color="white"
-              bg="black"
-              size={"lg"}
-              shadow={"dark-lg"}
-              _hover={{ shadow: "none" }}
-              variant="solid"
-              marginTop={{ base: 0, lg: 0, md: 0, sm: 4, xs: 4 }}
-            >
-              Connect With Me
-            </Button>
-          </NextLink>
-        </Flex>
-      </BaseLayout>
-      {/* <Timeline /> */}
-    </React.Fragment>
+      {/* Tech Stack Section */}
+      <TechStack />
+
+      {/* Contact / Connect Section */}
+      <section style={{ paddingBottom: "4rem" }}>
+        <div className="container-narrow">
+          <hr className="divider" />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "1.25rem",
+            }}
+          >
+            <div>
+              <p
+                className="mono"
+                style={{ color: "var(--muted)", marginBottom: "0.5rem", fontSize: "12px" }}
+              >
+                Start here
+              </p>
+              <h2
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "1.85rem",
+                  fontWeight: 700,
+                  lineHeight: 1.3,
+                  margin: "0 0 1rem",
+                  color: "var(--fg)",
+                }}
+              >
+                Let&apos;s build something{" "}
+                <em>great</em> together.
+              </h2>
+              <div
+                style={{
+                  display: "flex",
+                  gap: "0.75rem",
+                  flexWrap: "wrap",
+                }}
+              >
+                <a
+                  href="mailto:rafiurprotik111@gmail.com"
+                  className="btn-neo"
+                  style={{ fontSize: "14px", padding: "6px 16px" }}
+                >
+                  ✉ Send an email
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/rafiur-rahman-protik/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-neo"
+                  style={{ fontSize: "14px", padding: "6px 16px" }}
+                >
+                  LinkedIn ↗
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 

@@ -1,35 +1,47 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { IconButton, useColorMode, useColorModeValue } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 
-const ThemeToggleButton = (props) => {
-  const { toggleColorMode } = useColorMode();
-  const text = useColorModeValue("dark", "light");
-  const SwitchIcon = useColorModeValue(FaMoon, FaSun);
+const ThemeToggleButton = ({ style = {} }) => {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const stored = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const dark = stored === "dark" || (!stored && prefersDark);
+    setIsDark(dark);
+    document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
+  }, []);
+
+  const toggle = () => {
+    const next = !isDark;
+    setIsDark(next);
+    const val = next ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", val);
+    localStorage.setItem("theme", val);
+  };
 
   return (
-    <AnimatePresence mode="wait" initial={false}>
-      <motion.div
-        style={{ display: "inline-block" }}
-        key={useColorModeValue("light", "dark")}
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        exit={{ y: 20, opacity: 0 }}
-        transition={{ duration: 0.2 }}
-      >
-        <IconButton
-          size="md"
-          fontSize="lg"
-          aria-label={`Switch to ${text} mode`}
-          variant="ghost"
-          color="current"
-          marginLeft="2"
-          onClick={toggleColorMode}
-          icon={<SwitchIcon />}
-          {...props}
-        />
-      </motion.div>
-    </AnimatePresence>
+    <button
+      onClick={toggle}
+      aria-label="Toggle theme"
+      style={{
+        background: "transparent",
+        border: "1px solid var(--border)",
+        borderRadius: "999px",
+        width: 32,
+        height: 32,
+        display: "inline-flex",
+        alignItems: "center",
+        justifyContent: "center",
+        cursor: "pointer",
+        color: "var(--muted)",
+        transition: "color 0.15s, border-color 0.15s",
+        flexShrink: 0,
+        ...style,
+      }}
+    >
+      {isDark ? <FaSun size={13} /> : <FaMoon size={13} />}
+    </button>
   );
 };
 

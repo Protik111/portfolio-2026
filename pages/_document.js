@@ -1,8 +1,4 @@
-// pages/_document.js
-
-import { ColorModeScript } from "@chakra-ui/react";
 import NextDocument, { Html, Head, Main, NextScript } from "next/document";
-import theme from "../utils/theme";
 
 export default class Document extends NextDocument {
   render() {
@@ -10,8 +6,21 @@ export default class Document extends NextDocument {
       <Html lang="en">
         <Head />
         <body>
-          {/* 👇 Here's the script */}
-          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+          {/* Inline script to set data-theme before first paint to avoid flash */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                (function() {
+                  try {
+                    var stored = localStorage.getItem('theme');
+                    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    var dark = stored === 'dark' || (!stored && prefersDark);
+                    document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+                  } catch(e) {}
+                })();
+              `,
+            }}
+          />
           <Main />
           <NextScript />
         </body>

@@ -1,48 +1,46 @@
-// Basic Imports
 import React from "react";
 import NextLink from "next/link";
-
-// Chakra UI Imports
-import {
-  Box,
-  Button,
-  Container,
-  Divider,
-  Heading,
-  Text,
-} from "@chakra-ui/react";
-
-// Components Imports
-import BaseLayout from "../components/Wrapper/BaseLayout";
 import Seo from "../components/Seo";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const Custom500 = () => {
   return (
     <React.Fragment>
       <Seo title="Internal Server Error" />
-      <BaseLayout>
-        <Container m="auto" mt="20">
-          <Heading as="h1">Internal server error</Heading>
-          <Text mt="2">Oops, looks like we broke something...</Text>
-          <Text>An unexpected error occured</Text>
-          <Heading fontSize="4xl" my="4">
-            ❌ 500
-          </Heading>
-          <Divider my="6" />
-          <Box my="6">
-            <NextLink href="/" passHref>
-              <Button
-                type="button"
-                variant="solid"
-                colorScheme="teal"
-                bgGradient="linear(to-r, teal.500, green.400)"
-              >
-                This way back to safety, please ❤️
-              </Button>
+      <div style={{ minHeight: "100vh", background: "var(--bg)", color: "var(--fg)" }}>
+        <Header />
+        <main
+          style={{ paddingTop: "8rem", paddingBottom: "4rem", textAlign: "center" }}
+        >
+          <div className="container-narrow">
+            <p className="mono" style={{ color: "var(--muted)", marginBottom: "0.5rem" }}>
+              500
+            </p>
+            <h1
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontSize: "2.5rem",
+                fontWeight: 700,
+                marginBottom: "1rem",
+              }}
+            >
+              Internal server error
+            </h1>
+            <p style={{ color: "var(--muted)", marginBottom: "2rem" }}>
+              Oops! Something unexpected happened.
+            </p>
+            <NextLink
+              href="/"
+              className="btn-neo"
+              style={{ fontSize: "14px", padding: "7px 18px" }}
+            >
+              ← Back to safety
             </NextLink>
-          </Box>
-        </Container>
-      </BaseLayout>
+          </div>
+        </main>
+        <Footer />
+      </div>
     </React.Fragment>
   );
 };

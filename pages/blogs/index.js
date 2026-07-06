@@ -1,149 +1,90 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import React from "react";
 import Link from "next/link";
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import { remark } from "remark";
-import html from "remark-html";
-import {
-  Box,
-  Image,
-  Text,
-  Flex,
-  Heading,
-  useColorModeValue,
-} from "@chakra-ui/react";
 import Seo from "../../components/Seo";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import BaseLayout from "../../components/Wrapper/BaseLayout";
-import BaseText from "../../components/Wrapper/BaseText";
 import { blogsData } from "../../data/blogs/blogs";
 
 const Blog = () => {
   return (
     <React.Fragment>
-      <Box>
-        <Seo title="Blogs" />
-        <Box>
-          <header>
-            <Header />
-          </header>
-        </Box>
-        <main>
-          <BaseLayout>
-            <BaseText
-              firstTitle="Blogs"
-              secondTitle="Content"
-              textIcon="https://ik.imagekit.io/ayushsoni1010/Website/blogs?ik-sdk-version=javascript-1.4.3&updatedAt=1669666499904"
-              topSpacing="2"
-            />
-            <Flex
-              mt="24"
-              justify="space-evenly"
-              flexWrap="wrap"
-              alignItems="start"
-              rowGap="20"
-              gap="10"
-            >
-              {blogsData?.map((item, index) => {
-                return (
-                  <Box
-                    key={index}
-                    borderRadius="base"
-                    w="375px"
-                    h={{
-                      base: "440px",
-                      lg: "440px",
-                      md: "440px",
-                      sm: "440px",
-                      xs: "480px",
-                    }}
-                    overflow="hidden"
-                    bgColor={useColorModeValue("gray.50", "gray.700")}
-                    boxShadow="outline"
-                    transition="ease-in-out"
-                    transitionDuration="0.5s"
-                    _hover={{ boxShadow: "2xl" }}
-                  >
-                    <Link key={index} href={item.href}>
-                      <a target="_blank" rel="noopener noreferrer">
-                        <Image
-                          src={item.cover_image}
-                          alt={item.title}
-                          h="220px"
-                          w="full"
-                          borderRadius="base"
-                          transition="ease-in-out"
-                          transitionDuration="0.5s"
-                          _hover={{
-                            transform: "scale(1.1)",
-                            cursor: "pointer",
-                            transition: "ease-in-out",
-                            transitionDuration: "0.3s",
-                          }}
-                        />
-                      </a>
-                    </Link>
-                    <Box mt="4" p="4">
-                      <Link key={index} href={item.href} passHref>
-                        <Heading fontSize="2xl" cursor="pointer">
-                          {item.title}
-                        </Heading>
-                      </Link>
-                      <Text my="2">{item.date}</Text>
-                      <Text my="2" fontWeight="600">
+      <Seo title="Blogs" />
+      <div style={{ minHeight: "100vh", background: "var(--bg)", color: "var(--fg)" }}>
+        <header>
+          <Header />
+        </header>
+        <main style={{ paddingTop: "6rem", paddingBottom: "4rem" }}>
+          <div className="container-wide">
+            <h1 className="section-heading">Blogs</h1>
+            <p style={{ color: "var(--muted)", marginBottom: "2rem", fontSize: "14px" }}>
+              Things I think about and write down.
+            </p>
+            <div className="grid-2">
+              {blogsData?.map((item, index) => (
+                <a
+                  key={index}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="card"
+                  style={{ display: "block", textDecoration: "none" }}
+                >
+                  {item.cover_image && (
+                    <img
+                      src={item.cover_image}
+                      alt={item.title}
+                      style={{
+                        width: "100%",
+                        height: "180px",
+                        objectFit: "cover",
+                        display: "block",
+                      }}
+                    />
+                  )}
+                  <div style={{ padding: "1rem 1.25rem" }}>
+                    <h3
+                      style={{
+                        fontWeight: 600,
+                        fontSize: "15px",
+                        margin: "0 0 0.4rem",
+                        color: "var(--fg)",
+                        lineHeight: 1.4,
+                      }}
+                    >
+                      {item.title}
+                    </h3>
+                    <p
+                      className="mono"
+                      style={{
+                        color: "var(--muted)",
+                        fontSize: "12px",
+                        margin: "0 0 0.5rem",
+                      }}
+                    >
+                      {item.date}
+                    </p>
+                    {item.subtitle && (
+                      <p
+                        style={{
+                          color: "var(--muted)",
+                          fontSize: "13px",
+                          margin: 0,
+                          lineHeight: 1.5,
+                        }}
+                      >
                         {item.subtitle}
-                      </Text>
-                    </Box>
-                  </Box>
-                );
-              })}
-            </Flex>
-          </BaseLayout>
+                      </p>
+                    )}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
         </main>
-        <footer>
-          <Footer />
-        </footer>
-      </Box>
+        <Footer />
+      </div>
     </React.Fragment>
   );
 };
-
-export async function getStaticProps() {
-  const files = fs.readdirSync(path.join("data", "blogs"));
-
-  let slug = [];
-  let markdown = [];
-  let matterResult = [];
-  let contentHtml = [];
-  let frontmatter = [];
-
-  files.map((filename) => {
-    slug.push({ name: filename.replace(".mdx", "") });
-    markdown.push(
-      fs.readFileSync(path.join("data", "blogs", filename), "utf-8")
-    );
-  });
-
-  markdown.map(async (item, index) => {
-    matterResult.push(matter(item));
-    frontmatter.push(matterResult[index].data);
-
-    const processedContent = await remark()
-      .use(html)
-      .process(matterResult[index].content);
-    contentHtml.push({ content: processedContent.toString() });
-  });
-
-  return {
-    props: {
-      slug,
-      frontmatter,
-      contentHtml,
-    },
-  };
-}
 
 export default Blog;
