@@ -40,22 +40,17 @@ const Hero = () => {
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "0.85rem",
-            marginBottom: "1.75rem",
-            padding: "0.75rem 1rem",
-            background: "var(--card-bg)",
-            border: "1px solid var(--border)",
-            borderRadius: "10px",
-            width: "fit-content",
+            gap: "1rem",
+            marginBottom: "1.5rem",
           }}
         >
           <img
-            src="/profile.JPG"
+            src="/profile.jpeg"
             alt="Protik"
-            width={46}
-            height={46}
+            width={52}
+            height={52}
             style={{
-              borderRadius: "8px",
+              borderRadius: "50%",
               objectFit: "cover",
               border: "1px solid var(--border)",
               flexShrink: 0,
@@ -65,7 +60,7 @@ const Hero = () => {
             <p
               style={{
                 fontWeight: 600,
-                fontSize: "15px",
+                fontSize: "16px",
                 color: "var(--fg)",
                 margin: 0,
               }}
@@ -75,11 +70,11 @@ const Hero = () => {
             <p
               style={{
                 color: "var(--muted)",
-                fontSize: "13px",
+                fontSize: "14px",
                 margin: 0,
               }}
             >
-              Software Engineer
+              Full-stack Software Engineer & DevOps Enthusiast
             </p>
           </div>
         </div>
@@ -87,83 +82,84 @@ const Hero = () => {
         {/* Intro text */}
         <div
           style={{
-            fontSize: "15px",
+            fontSize: "15.5px",
             lineHeight: "1.8",
             color: "var(--fg)",
-            marginBottom: "1rem",
+            marginBottom: "2rem",
           }}
         >
-          <p style={{ margin: "0 0 0.6rem" }}>
-            hi, i&apos;m{" "}
-            <strong>protik</strong> — a fullstack developer &amp; software engineer.{" "}
+          <p style={{ margin: "0 0 1rem" }}>
+            I’m a passionate Full-stack Software Engineer building scalable, production-ready applications and cloud-native solutions. My expertise spans <strong>React.js, Next.js, TypeScript, Node.js, Docker, AWS, CI/CD, and microservices architecture</strong>.
+          </p>
+          <p style={{ margin: "0 0 1.25rem" }}>
+            I focus on solving real-world problems with clean code, scalable design, and cost-efficient cloud solutions. From video streaming platforms to containerized microservices, I enjoy tackling complex technical challenges and building systems that scale.
+          </p>
+          <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginTop: "1.5rem" }}>
             <a
               href="https://github.com/Protik111"
               target="_blank"
               rel="noreferrer"
               className="btn-neo"
             >
-              <FaGithub size={12} /> GitHub
+              <FaGithub size={15} /> GitHub
             </a>
-          </p>
-          <p style={{ margin: "0 0 0.6rem" }}>
-            i build scalable apps using{" "}
-            <strong>TypeScript, React &amp; Node.js</strong>, always shipping.
-          </p>
-          <p style={{ margin: 0 }}>
-            got an idea worth building?{" "}
             <a
               href="https://www.linkedin.com/in/rafiur-rahman-protik/"
               target="_blank"
               rel="noreferrer"
               className="btn-neo"
             >
-              <FaLinkedin size={12} /> LinkedIn
-            </a>{" "}
-            OR{" "}
+              <FaLinkedin size={15} /> LinkedIn
+            </a>
             <a
               href="mailto:rafiurprotik111@gmail.com"
               className="btn-neo"
             >
-              <HiOutlineMail size={13} /> Email me
+              <HiOutlineMail size={16} /> Email me
             </a>
-          </p>
+          </div>
         </div>
 
-        {/* GitHub contribution graph (static image from GitHub) */}
+        {/* GitHub contribution graph */}
         <div
           style={{
-            marginTop: "2rem",
-            padding: "1rem",
+            marginTop: "2.5rem",
             background: "var(--card-bg)",
             border: "1px solid var(--border)",
-            borderRadius: "8px",
+            borderRadius: "10px",
             overflow: "hidden",
+            boxShadow: "0 1px 3px rgba(0,0,0,0.02)"
           }}
         >
-          <img
-            src="https://ghchart.rshah.org/737373/Protik111"
-            alt="GitHub contribution chart"
-            style={{
-              width: "100%",
-              height: "auto",
-              display: "block",
-              opacity: 0.85,
-            }}
-            onError={(e) => {
-              e.target.style.display = "none";
-            }}
-          />
-          <p
-            className="mono"
-            style={{
-              color: "var(--muted)",
-              marginTop: "0.5rem",
-              marginBottom: 0,
-              fontSize: "12px",
+          <div 
+            style={{ 
+              padding: "0.85rem 1.25rem", 
+              borderBottom: "1px solid var(--border)", 
+              display: "flex", 
+              alignItems: "center", 
+              gap: "8px",
+              background: "var(--bg)"
             }}
           >
-            GitHub activity
-          </p>
+            <FaGithub size={15} color="var(--fg)" />
+            <h3 style={{ margin: 0, fontSize: '14.5px', fontWeight: '600', color: 'var(--fg)' }}>
+              Commits & Activity
+            </h3>
+          </div>
+          <div style={{ padding: "1.25rem", overflowX: "auto" }}>
+            <img
+              src="https://ghchart.rshah.org/737373/Protik111"
+              alt="Protik111's GitHub chart"
+              style={{
+                minWidth: "750px",
+                width: "100%",
+                display: "block",
+              }}
+              onError={(e) => {
+                e.target.style.display = "none";
+              }}
+            />
+          </div>
         </div>
       </div>
     </section>

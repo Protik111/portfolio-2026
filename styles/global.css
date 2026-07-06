@@ -39,7 +39,9 @@
 }
 
 /* ── Base Styles ──────────────────────────────────── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -100,33 +102,31 @@ a {
   padding-right: 1.25rem;
 }
 
-/* ── Neo-Brutalist Button ─────────────────────────── */
+/* ── Modern Button ─────────────────────────── */
 .btn-neo {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 3px 10px;
-  font-size: 13px;
+  gap: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
   font-family: var(--font-sans);
   font-weight: 500;
-  background: var(--bg);
+  background: var(--card-bg);
   color: var(--fg);
-  border: 1.5px solid var(--border);
-  border-radius: 4px;
-  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  border-radius: 8px;
   cursor: pointer;
-  transition: box-shadow 0.12s ease, transform 0.12s ease;
+  transition: all 0.2s ease;
   text-decoration: none;
 }
 
 .btn-neo:hover {
-  box-shadow: var(--shadow-hover);
-  transform: translate(-1px, -1px);
+  background: var(--border);
+  transform: translateY(-1px);
 }
 
 .btn-neo:active {
-  box-shadow: 1px 1px 0 var(--fg);
-  transform: translate(1px, 1px);
+  transform: translateY(0);
 }
 
 /* ── Tech Stack Badge ─────────────────────────────── */
@@ -190,7 +190,7 @@ a {
   border-radius: 999px;
   padding: 5px 8px;
   backdrop-filter: blur(12px);
-  box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
 }
 
 .pill-nav a {
@@ -219,6 +219,7 @@ a {
   .grid-2 {
     grid-template-columns: 1fr;
   }
+
   .section-heading {
     font-size: 1.75rem;
   }
