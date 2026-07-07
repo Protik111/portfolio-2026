@@ -34,8 +34,10 @@ const NotFound = () => {
             <p style={{ color: "var(--muted)", marginBottom: "2rem" }}>
               The page you&apos;re looking for doesn&apos;t exist.
             </p>
-            <NextLink href="/" className="btn-neo" style={{ fontSize: "14px", padding: "7px 18px" }}>
-              ← Back home
+            <NextLink href="/" passHref>
+              <a className="btn-neo" style={{ fontSize: "14px", padding: "7px 18px" }}>
+                ← Back home
+              </a>
             </NextLink>
           </div>
         </main>

@@ -4,12 +4,35 @@
         <description><![CDATA[Hey! I am Ayush, a full-stack developer from Bangladesh]]></description>
         <link>https://ayushsoni1010.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 07 Jul 2026 10:39:35 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 07 Jul 2026 10:48:03 GMT</lastBuildDate>
         <atom:link href="https://ayushsoni1010.com/feed.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[Ayush Soni | 2026]]></copyright>
         <language><![CDATA[en]]></language>
         <managingEditor><![CDATA[Ayush Soni]]></managingEditor>
         <webMaster><![CDATA[Ayush Soni]]></webMaster>
+        <item>
+            <title><![CDATA[API Architectural Styles]]></title>
+            <description><![CDATA[What are the API architectural styles]]></description>
+            <link>https://ayushsoni1010.hashnode.dev/api-architectural-styles</link>
+            <guid isPermaLink="true">https://ayushsoni1010.hashnode.dev/api-architectural-styles</guid>
+            <category><![CDATA[Open Source]]></category>
+            <category><![CDATA[API]]></category>
+            <category><![CDATA[GraphQL]]></category>
+            <category><![CDATA[WebHooks]]></category>
+            <category><![CDATA[Web Sockets]]></category>
+            <category><![CDATA[REST]]></category>
+            <category><![CDATA[API Development]]></category>
+            <category><![CDATA[Protocol]]></category>
+            <category><![CDATA[JavaScript]]></category>
+            <category><![CDATA[gRPC]]></category>
+            <dc:creator><![CDATA[Ayush Soni]]></dc:creator>
+            <pubDate>Wed, 22 Mar 2023 18:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <guid isPermaLink="false">No title</guid>
+            <dc:creator><![CDATA[Ayush Soni]]></dc:creator>
+        </item>
         <item>
             <title><![CDATA[Build an API with Serverless Functions in Next.js]]></title>
             <description><![CDATA[Creating Efficient and Scalable Serverless APIs]]></description>
@@ -34,29 +57,6 @@
             <pubDate>Fri, 31 Mar 2023 18:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[No title]]></title>
-            <guid isPermaLink="false">No title</guid>
-            <dc:creator><![CDATA[Ayush Soni]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[API Architectural Styles]]></title>
-            <description><![CDATA[What are the API architectural styles]]></description>
-            <link>https://ayushsoni1010.hashnode.dev/api-architectural-styles</link>
-            <guid isPermaLink="true">https://ayushsoni1010.hashnode.dev/api-architectural-styles</guid>
-            <category><![CDATA[Open Source]]></category>
-            <category><![CDATA[API]]></category>
-            <category><![CDATA[GraphQL]]></category>
-            <category><![CDATA[WebHooks]]></category>
-            <category><![CDATA[Web Sockets]]></category>
-            <category><![CDATA[REST]]></category>
-            <category><![CDATA[API Development]]></category>
-            <category><![CDATA[Protocol]]></category>
-            <category><![CDATA[JavaScript]]></category>
-            <category><![CDATA[gRPC]]></category>
-            <dc:creator><![CDATA[Ayush Soni]]></dc:creator>
-            <pubDate>Wed, 22 Mar 2023 18:00:00 GMT</pubDate>
-        </item>
-        <item>
             <title><![CDATA[Crafting Effective Chaos Error Messages]]></title>
             <description><![CDATA[Communicating Complexity with Clarity]]></description>
             <link>https://ayushsoni1010.hashnode.dev/crafting-effective-chaos-error-messages</link>
@@ -74,43 +74,6 @@
             <category><![CDATA[UX Writing]]></category>
             <dc:creator><![CDATA[Ayush Soni]]></dc:creator>
             <pubDate>Sat, 25 Mar 2023 18:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Hacking at MLH HackCon]]></title>
-            <description><![CDATA[A beautiful journey to HackCon Bangladesh]]></description>
-            <link>https://ayushsoni1010.hashnode.dev/hacking-at-mlh-hackcon</link>
-            <guid isPermaLink="true">https://ayushsoni1010.hashnode.dev/hacking-at-mlh-hackcon</guid>
-            <category><![CDATA[MLH]]></category>
-            <category><![CDATA[Open Source]]></category>
-            <category><![CDATA[Community]]></category>
-            <category><![CDATA[Hackathons]]></category>
-            <category><![CDATA[GitHub]]></category>
-            <category><![CDATA[Conference]]></category>
-            <category><![CDATA[GitHub Global Campus]]></category>
-            <category><![CDATA[Meetup]]></category>
-            <category><![CDATA[MLH Fellowship]]></category>
-            <category><![CDATA[Open Source Program]]></category>
-            <category><![CDATA[Major League Hacking]]></category>
-            <category><![CDATA[GitHub Education]]></category>
-            <category><![CDATA[GitHub Campus Experts]]></category>
-            <category><![CDATA[Community Leaders]]></category>
-            <dc:creator><![CDATA[Ayush Soni]]></dc:creator>
-            <pubDate>Fri, 16 Dec 2022 18:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[How to deploy the Headless CMS Strapi app on Heroku]]></title>
-            <description><![CDATA[Get started with the Strapi headless CMS]]></description>
-            <link>https://ayushsoni1010.hashnode.dev/how-to-deploy-the-headless-cms-strapi-app-on-heroku</link>
-            <guid isPermaLink="true">https://ayushsoni1010.hashnode.dev/how-to-deploy-the-headless-cms-strapi-app-on-heroku</guid>
-            <category><![CDATA[Open Source]]></category>
-            <category><![CDATA[Headless CMS]]></category>
-            <category><![CDATA[Strapi]]></category>
-            <category><![CDATA[Node.js]]></category>
-            <category><![CDATA[Heroku]]></category>
-            <category><![CDATA[PostgreSQL]]></category>
-            <category><![CDATA[Community]]></category>
-            <dc:creator><![CDATA[Ayush Soni]]></dc:creator>
-            <pubDate>Tue, 14 Dec 2021 18:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Deploy your React app using GitHub pages]]></title>
@@ -142,6 +105,28 @@
             <pubDate>Sun, 21 Jul 2024 18:00:00 GMT</pubDate>
         </item>
         <item>
+            <title><![CDATA[Hacking at MLH HackCon]]></title>
+            <description><![CDATA[A beautiful journey to HackCon Bangladesh]]></description>
+            <link>https://ayushsoni1010.hashnode.dev/hacking-at-mlh-hackcon</link>
+            <guid isPermaLink="true">https://ayushsoni1010.hashnode.dev/hacking-at-mlh-hackcon</guid>
+            <category><![CDATA[MLH]]></category>
+            <category><![CDATA[Open Source]]></category>
+            <category><![CDATA[Community]]></category>
+            <category><![CDATA[Hackathons]]></category>
+            <category><![CDATA[GitHub]]></category>
+            <category><![CDATA[Conference]]></category>
+            <category><![CDATA[GitHub Global Campus]]></category>
+            <category><![CDATA[Meetup]]></category>
+            <category><![CDATA[MLH Fellowship]]></category>
+            <category><![CDATA[Open Source Program]]></category>
+            <category><![CDATA[Major League Hacking]]></category>
+            <category><![CDATA[GitHub Education]]></category>
+            <category><![CDATA[GitHub Campus Experts]]></category>
+            <category><![CDATA[Community Leaders]]></category>
+            <dc:creator><![CDATA[Ayush Soni]]></dc:creator>
+            <pubDate>Fri, 16 Dec 2022 18:00:00 GMT</pubDate>
+        </item>
+        <item>
             <title><![CDATA[How to install fastn on your local machine]]></title>
             <description><![CDATA[A comprehensive guide on installation of fastn]]></description>
             <link>https://ayushsoni1010.hashnode.dev/how-to-install-fastn-on-your-local-machine</link>
@@ -166,6 +151,21 @@
             <pubDate>Tue, 02 May 2023 18:00:00 GMT</pubDate>
         </item>
         <item>
+            <title><![CDATA[How to deploy the Headless CMS Strapi app on Heroku]]></title>
+            <description><![CDATA[Get started with the Strapi headless CMS]]></description>
+            <link>https://ayushsoni1010.hashnode.dev/how-to-deploy-the-headless-cms-strapi-app-on-heroku</link>
+            <guid isPermaLink="true">https://ayushsoni1010.hashnode.dev/how-to-deploy-the-headless-cms-strapi-app-on-heroku</guid>
+            <category><![CDATA[Open Source]]></category>
+            <category><![CDATA[Headless CMS]]></category>
+            <category><![CDATA[Strapi]]></category>
+            <category><![CDATA[Node.js]]></category>
+            <category><![CDATA[Heroku]]></category>
+            <category><![CDATA[PostgreSQL]]></category>
+            <category><![CDATA[Community]]></category>
+            <dc:creator><![CDATA[Ayush Soni]]></dc:creator>
+            <pubDate>Tue, 14 Dec 2021 18:00:00 GMT</pubDate>
+        </item>
+        <item>
             <title><![CDATA[HTTP Status Codes]]></title>
             <description><![CDATA[Understanding the Meaning and Significance of HTTP Status Codes]]></description>
             <link>https://ayushsoni1010.hashnode.dev/http-status-codes</link>
@@ -179,6 +179,19 @@
             <category><![CDATA[Server]]></category>
             <dc:creator><![CDATA[Ayush Soni]]></dc:creator>
             <pubDate>Fri, 24 Mar 2023 18:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Lets Grow with LetsGrowMore]]></title>
+            <description><![CDATA[A constructive blog on open source contribution program and other opportunities]]></description>
+            <link>https://ayushsoni1010.hashnode.dev/lets-grow-with-letsgrowmore</link>
+            <guid isPermaLink="true">https://ayushsoni1010.hashnode.dev/lets-grow-with-letsgrowmore</guid>
+            <category><![CDATA[Open Source]]></category>
+            <category><![CDATA[LetsGrowMore]]></category>
+            <category><![CDATA[Community]]></category>
+            <category><![CDATA[Open Source Program]]></category>
+            <category><![CDATA[LGMSOC'21]]></category>
+            <dc:creator><![CDATA[Ayush Soni]]></dc:creator>
+            <pubDate>Wed, 22 Sep 2021 18:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[MVC, MVP, MVVM, MVVM-C, and VIPER architecture patterns]]></title>
@@ -199,36 +212,6 @@
             <pubDate>Thu, 23 Mar 2023 18:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Lets Grow with LetsGrowMore]]></title>
-            <description><![CDATA[A constructive blog on open source contribution program and other opportunities]]></description>
-            <link>https://ayushsoni1010.hashnode.dev/lets-grow-with-letsgrowmore</link>
-            <guid isPermaLink="true">https://ayushsoni1010.hashnode.dev/lets-grow-with-letsgrowmore</guid>
-            <category><![CDATA[Open Source]]></category>
-            <category><![CDATA[LetsGrowMore]]></category>
-            <category><![CDATA[Community]]></category>
-            <category><![CDATA[Open Source Program]]></category>
-            <category><![CDATA[LGMSOC'21]]></category>
-            <dc:creator><![CDATA[Ayush Soni]]></dc:creator>
-            <pubDate>Wed, 22 Sep 2021 18:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Why is Nginx called a “reverse” proxy?]]></title>
-            <description><![CDATA[Understanding Nginx's role as a Reverse Proxy]]></description>
-            <link>https://ayushsoni1010.hashnode.dev/why-is-nginx-called-a-reverse-proxy</link>
-            <guid isPermaLink="true">https://ayushsoni1010.hashnode.dev/why-is-nginx-called-a-reverse-proxy</guid>
-            <category><![CDATA[Open Source]]></category>
-            <category><![CDATA[API]]></category>
-            <category><![CDATA[Web Servers]]></category>
-            <category><![CDATA[WebHooks]]></category>
-            <category><![CDATA[Web]]></category>
-            <category><![CDATA[Networking]]></category>
-            <category><![CDATA[Caching]]></category>
-            <category><![CDATA[Load Balancer]]></category>
-            <category><![CDATA[Proxy Server]]></category>
-            <dc:creator><![CDATA[Ayush Soni]]></dc:creator>
-            <pubDate>Sun, 26 Mar 2023 18:00:00 GMT</pubDate>
-        </item>
-        <item>
             <title><![CDATA[Supercharge your React app with useSWR]]></title>
             <description><![CDATA[Saves You the Stress of Writing Your Own Logic]]></description>
             <link>https://ayushsoni1010.hashnode.dev/supercharge-your-react-app-with-useswr</link>
@@ -246,6 +229,23 @@
             <category><![CDATA[Frontend]]></category>
             <dc:creator><![CDATA[Ayush Soni]]></dc:creator>
             <pubDate>Tue, 28 Mar 2023 18:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Why is Nginx called a “reverse” proxy?]]></title>
+            <description><![CDATA[Understanding Nginx's role as a Reverse Proxy]]></description>
+            <link>https://ayushsoni1010.hashnode.dev/why-is-nginx-called-a-reverse-proxy</link>
+            <guid isPermaLink="true">https://ayushsoni1010.hashnode.dev/why-is-nginx-called-a-reverse-proxy</guid>
+            <category><![CDATA[Open Source]]></category>
+            <category><![CDATA[API]]></category>
+            <category><![CDATA[Web Servers]]></category>
+            <category><![CDATA[WebHooks]]></category>
+            <category><![CDATA[Web]]></category>
+            <category><![CDATA[Networking]]></category>
+            <category><![CDATA[Caching]]></category>
+            <category><![CDATA[Load Balancer]]></category>
+            <category><![CDATA[Proxy Server]]></category>
+            <dc:creator><![CDATA[Ayush Soni]]></dc:creator>
+            <pubDate>Sun, 26 Mar 2023 18:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

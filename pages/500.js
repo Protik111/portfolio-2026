@@ -30,12 +30,10 @@ const Custom500 = () => {
             <p style={{ color: "var(--muted)", marginBottom: "2rem" }}>
               Oops! Something unexpected happened.
             </p>
-            <NextLink
-              href="/"
-              className="btn-neo"
-              style={{ fontSize: "14px", padding: "7px 18px" }}
-            >
-              ← Back to safety
+            <NextLink href="/" passHref>
+              <a className="btn-neo" style={{ fontSize: "14px", padding: "7px 18px" }}>
+                ← Back to safety
+              </a>
             </NextLink>
           </div>
         </main>

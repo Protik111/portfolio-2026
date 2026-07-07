@@ -22,18 +22,19 @@ const SectionHeader = ({ title, href }) => (
     <h2 className="section-heading" style={{ marginBottom: 0 }}>
       {title}
     </h2>
-    <NextLink
-      href={href}
-      style={{
-        fontSize: "13px",
-        color: "var(--muted)",
-        display: "inline-flex",
-        alignItems: "center",
-        gap: "4px",
-        transition: "color 0.15s",
-      }}
-    >
-      View All ↗
+    <NextLink href={href} passHref>
+      <a
+        style={{
+          fontSize: "13px",
+          color: "var(--muted)",
+          display: "inline-flex",
+          alignItems: "center",
+          gap: "4px",
+          transition: "color 0.15s",
+        }}
+      >
+        View All ↗
+      </a>
     </NextLink>
   </div>
 );

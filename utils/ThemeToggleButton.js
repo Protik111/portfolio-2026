@@ -23,21 +23,6 @@ const ThemeToggleButton = ({ style = {} }) => {
     localStorage.setItem("theme", val);
   };
 
-  if (!mounted) {
-    return (
-      <div
-        style={{
-          width: 32,
-          height: 32,
-          borderRadius: "50%",
-          border: "1px solid var(--border)",
-          background: "transparent",
-          ...style,
-        }}
-      />
-    );
-  }
-
   return (
     <button
       onClick={toggle}
@@ -60,23 +45,25 @@ const ThemeToggleButton = ({ style = {} }) => {
         ...style,
       }}
     >
-      <AnimatePresence mode="wait" initial={false}>
-        <motion.div
-          key={isDark ? "sun" : "moon"}
-          initial={{ y: 12, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -12, opacity: 0 }}
-          transition={{ duration: 0.16, ease: "easeInOut" }}
-          style={{
-            position: "absolute",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          {isDark ? <FaSun size={13} /> : <FaMoon size={13} />}
-        </motion.div>
-      </AnimatePresence>
+      {mounted && (
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            key={isDark ? "sun" : "moon"}
+            initial={{ y: 12, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -12, opacity: 0 }}
+            transition={{ duration: 0.16, ease: "easeInOut" }}
+            style={{
+              position: "absolute",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            {isDark ? <FaSun size={13} /> : <FaMoon size={13} />}
+          </motion.div>
+        </AnimatePresence>
+      )}
     </button>
   );
 };

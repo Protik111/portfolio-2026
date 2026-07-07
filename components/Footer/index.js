@@ -33,18 +33,18 @@ const Footer = () => {
               { href: "/contact", label: "Contact" },
               { href: "/resume", label: "Resume" },
             ].map((link) => (
-              <NextLink
-                key={link.href}
-                href={link.href}
-                style={{
-                  fontSize: "12.5px",
-                  color: "var(--muted)",
-                  transition: "color 0.15s",
-                }}
-                onMouseEnter={(e) => (e.target.style.color = "var(--fg)")}
-                onMouseLeave={(e) => (e.target.style.color = "var(--muted)")}
-              >
-                {link.label}
+              <NextLink key={link.href} href={link.href} passHref>
+                <a
+                  style={{
+                    fontSize: "12.5px",
+                    color: "var(--muted)",
+                    transition: "color 0.15s",
+                  }}
+                  onMouseEnter={(e) => (e.target.style.color = "var(--fg)")}
+                  onMouseLeave={(e) => (e.target.style.color = "var(--muted)")}
+                >
+                  {link.label}
+                </a>
               </NextLink>
             ))}
           </nav>

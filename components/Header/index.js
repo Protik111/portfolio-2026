@@ -55,8 +55,10 @@ const Header = () => {
           style={{ boxShadow: scrolled ? "0 4px 20px rgba(0,0,0,0.10)" : "0 1px 8px rgba(0,0,0,0.06)", transition: "box-shadow 0.2s ease" }}
         >
           {navLinks.map((link) => (
-            <NextLink key={link.href} href={link.href} className={router.pathname === link.href ? "active" : ""}>
-              {link.label}
+            <NextLink key={link.href} href={link.href} passHref>
+              <a className={router.pathname === link.href ? "active" : ""}>
+                {link.label}
+              </a>
             </NextLink>
           ))}
           <div style={{ width: 1, height: 18, background: "var(--border)", margin: "0 4px" }} />
@@ -78,12 +80,14 @@ const Header = () => {
           boxShadow: scrolled ? "0 2px 12px rgba(0,0,0,0.07)" : "none",
         }}
       >
-        <NextLink href="/" style={{ display: "flex", alignItems: "center" }}>
-          <img
-            src="/bracket.png"
-            alt="Protik"
-            style={{ width: 32, height: 32, objectFit: "contain", opacity: 0.85 }}
-          />
+        <NextLink href="/" passHref>
+          <a style={{ display: "flex", alignItems: "center" }}>
+            <img
+              src="/bracket.png"
+              alt="Protik"
+              style={{ width: 32, height: 32, objectFit: "contain", opacity: 0.85 }}
+            />
+          </a>
         </NextLink>
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <ThemeToggleButton />
@@ -121,20 +125,21 @@ const Header = () => {
           }}
         >
           {navLinks.map((link) => (
-            <NextLink
-              key={link.href}
-              href={link.href}
-              style={{
-                padding: "10px 12px", borderRadius: "8px",
-                fontSize: "15px",
-                fontWeight: router.pathname === link.href ? 600 : 500,
-                color: router.pathname === link.href ? "var(--fg)" : "var(--muted)",
-                background: router.pathname === link.href ? "var(--card-bg)" : "transparent",
-                border: router.pathname === link.href ? "1px solid var(--border)" : "1px solid transparent",
-                transition: "background 0.15s, color 0.15s",
-              }}
-            >
-              {link.label}
+            <NextLink key={link.href} href={link.href} passHref>
+              <a
+                style={{
+                  padding: "10px 12px", borderRadius: "8px",
+                  fontSize: "15px",
+                  fontWeight: router.pathname === link.href ? 600 : 500,
+                  color: router.pathname === link.href ? "var(--fg)" : "var(--muted)",
+                  background: router.pathname === link.href ? "var(--card-bg)" : "transparent",
+                  border: router.pathname === link.href ? "1px solid var(--border)" : "1px solid transparent",
+                  transition: "background 0.15s, color 0.15s",
+                  display: "block",
+                }}
+              >
+                {link.label}
+              </a>
             </NextLink>
           ))}
         </div>
