@@ -107,6 +107,22 @@ const getToolInfo = (toolKey) => {
 const ProjectCard = ({ project }) => {
   return (
     <div className="card">
+      {/* Scoped tooltip fix: right-anchored tooltips for edge items */}
+      <style>{`
+        .tooltip-right .tooltiptext {
+          left: auto !important;
+          right: 0;
+          transform: translateX(0) translateY(4px) !important;
+        }
+        .tooltip-right:hover .tooltiptext {
+          transform: translateX(0) translateY(0) !important;
+        }
+        .tooltip-right .tooltiptext::after {
+          left: auto;
+          right: 10px;
+          margin-left: 0;
+        }
+      `}</style>
       {/* Dynamic Image Header (Light / Dark responsive) */}
       <div 
         style={{ 
@@ -165,7 +181,7 @@ const ProjectCard = ({ project }) => {
           {/* Social / Direct Platforms Links */}
           <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
             {project.links.site && (
-              <div className="tooltip">
+              <div className="tooltip tooltip-right">
                 <a 
                   href={project.links.site} 
                   target="_blank" 
@@ -179,7 +195,7 @@ const ProjectCard = ({ project }) => {
               </div>
             )}
             {project.links.github && (
-              <div className="tooltip">
+              <div className="tooltip tooltip-right">
                 <a 
                   href={project.links.github} 
                   target="_blank" 
@@ -193,7 +209,7 @@ const ProjectCard = ({ project }) => {
               </div>
             )}
             {project.links.youtube && (
-              <div className="tooltip">
+              <div className="tooltip tooltip-right">
                 <a 
                   href={project.links.youtube} 
                   target="_blank" 
@@ -275,7 +291,7 @@ const ProjectCard = ({ project }) => {
             {project.tools.map((tool) => {
               const toolInfo = getToolInfo(tool);
               return (
-                <div key={tool} className="tooltip">
+                <div key={tool} className="tooltip tooltip-right">
                   <div 
                     style={{
                       width: "22px",

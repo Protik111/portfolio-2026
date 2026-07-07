@@ -5,6 +5,9 @@ import { projectsData } from "../../data/projects/projects";
 import ProjectCard from "./ProjectCard";
 import experiencesData from "../../data/experience/data.json";
 import { blogsData } from "../../data/blogs/blogs";
+import { HiOutlineMail } from "react-icons/hi";
+import { FaLinkedin } from "react-icons/fa";
+import { BsCalendar2Check } from "react-icons/bs";
 
 /* ── Shared section header ──────────────────────────────────────── */
 const SectionHeader = ({ title, href }) => (
@@ -406,22 +409,52 @@ const Home = () => {
                   flexWrap: "wrap",
                 }}
               >
-                <a
-                  href="mailto:rafiurprotik111@gmail.com"
-                  className="btn-neo"
-                  style={{ fontSize: "14px", padding: "6px 16px" }}
-                >
-                  ✉ Send an email
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/rafiur-rahman-protik/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-neo"
-                  style={{ fontSize: "14px", padding: "6px 16px" }}
-                >
-                  LinkedIn ↗
-                </a>
+                {[
+                  {
+                    href: "mailto:rafiurprotik111@gmail.com",
+                    label: "Send an email",
+                    icon: <HiOutlineMail size={17} color="#7c3aed" />,
+                    iconBg: "rgba(124,58,237,0.10)",
+                    target: undefined,
+                  },
+                  {
+                    href: "https://www.linkedin.com/in/rafiur-rahman-protik/",
+                    label: "LinkedIn",
+                    icon: <FaLinkedin size={16} color="#0077B5" />,
+                    iconBg: "rgba(0,119,181,0.10)",
+                    target: "_blank",
+                  },
+                  {
+                    href: "https://calendly.com/rafiurprotik111",
+                    label: "Book a call",
+                    icon: <BsCalendar2Check size={15} color="#00a3ff" />,
+                    iconBg: "rgba(0,163,255,0.10)",
+                    target: "_blank",
+                  },
+                ].map(({ href, label, icon, iconBg, target }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target={target}
+                    rel={target ? "noreferrer" : undefined}
+                    className="btn-neo"
+                    style={{ padding: "7px 14px 7px 7px", borderRadius: "10px", fontWeight: 500, gap: "8px", fontSize: "14px" }}
+                  >
+                    <span style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      width: 28,
+                      height: 28,
+                      borderRadius: "7px",
+                      background: iconBg,
+                      flexShrink: 0,
+                    }}>
+                      {icon}
+                    </span>
+                    {label}
+                  </a>
+                ))}
               </div>
             </div>
           </div>
