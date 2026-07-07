@@ -10,10 +10,10 @@
 
 /* ── CSS Design Tokens ────────────────────────────── */
 :root {
-  --bg: #ffffff;
+  --bg: #fafafa;
   --fg: #0a0a0a;
   --muted: #737373;
-  --card-bg: #f9f9f9;
+  --card-bg: #ffffff;
   --border: #e5e5e5;
   --shadow: 2px 2px 0px #0a0a0a;
   --shadow-hover: 3px 3px 0px #0a0a0a;
@@ -29,11 +29,11 @@
 
 /* ── Dark Mode ────────────────────────────────────── */
 [data-theme='dark'] {
-  --bg: #000000;
+  --bg: #020202;
   --fg: #fafafa;
   --muted: #a3a3a3;
-  --card-bg: #0b0b0b;
-  --border: #262626;
+  --card-bg: #161616;
+  --border: #2e2e2e;
   --shadow: 2px 2px 0px #fafafa;
   --shadow-hover: 3px 3px 0px #fafafa;
 }
@@ -55,8 +55,43 @@ body {
   font-family: var(--font-sans);
   font-size: 15px;
   line-height: 1.65;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
   -webkit-font-smoothing: antialiased;
+}
+
+/* ── Soft radial glow at top-center ─────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  top: -160px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 600px;
+  background: radial-gradient(ellipse at center,
+      rgba(100, 100, 255, 0.10) 0%,
+      rgba(160, 140, 255, 0.05) 40%,
+      transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme='dark'] body::before {
+  background: radial-gradient(ellipse at center,
+      rgba(120, 100, 255, 0.13) 0%,
+      rgba(80, 60, 200, 0.06) 40%,
+      transparent 70%);
+}
+
+/* Keep page content above the glow layer */
+#__next {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure next.js inline page containers allow background grid alignment to shine through */
+#__next>div {
+  background: transparent !important;
 }
 
 a {
