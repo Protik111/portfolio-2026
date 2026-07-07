@@ -1,5 +1,13 @@
 export const blogsData = [
   {
+    id: 0,
+    title: "Deploying a Full-Stack App on AWS EC2 with Nginx Load Balancer (Frontend & Backend on Separate Instances)",
+    href: "https://medium.com/towardsdev/deploying-a-full-stack-app-on-aws-ec2-with-nginx-load-balancer-frontend-backend-on-separate-afaf910bb106",
+    subtitle: "I’ll walk through how I deployed the frontend and backend on separate EC2 instances, used Nginx to load-balance multiple backend servers",
+    cover_image: "/images/blogs/aws-deployment.webp",
+    date: "Feb 15, 2026",
+  },
+  {
     id: 1,
     title: "JavaScript Asynchronous Behavior (Part 1) - Callbacks in Depth",
     href: "https://medium.com/dev-genius/javascript-asynchronous-behavior-part-1-callbacks-in-depth-ca33fb8dcd04",
@@ -9,6 +17,15 @@ export const blogsData = [
   },
   {
     id: 2,
+    title: "Crud Operation with Array and Object in JavaScript.",
+    href: "https://towardsdev.com/crud-operation-with-array-and-object-in-javascript-56af95aff3b2",
+    subtitle: "In this article I’m going to show you how to..",
+    cover_image:
+      "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*llIOfKIBEEvan_5DKt5HYA.png",
+    date: "Feb 8, 2022",
+  },
+  {
+    id: 3,
     title:
       "Performance Optimization and Get Child State without Re-Rendering..",
     href: "https://medium.com/@rafiurrahmanprotik/performance-optimization-and-get-child-state-without-re-rendering-the-child-component-using-useref-d649ab7db960",
@@ -17,15 +34,7 @@ export const blogsData = [
       "https://miro.medium.com/v2/resize:fit:750/format:webp/0*3IJaEsj63N8A8fKV.png",
     date: "Nov 19, 2023",
   },
-  {
-    id: 3,
-    title: "Crud Operation with Array and Object in JavaScript.",
-    href: "https://towardsdev.com/crud-operation-with-array-and-object-in-javascript-56af95aff3b2",
-    subtitle: "In this article I’m going to show you how to..",
-    cover_image:
-      "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*llIOfKIBEEvan_5DKt5HYA.png",
-    date: "Feb 8, 2022",
-  },
+  
   {
     id: 4,
     title: "Express.js Project Structure and Middleware Concept for Beginners",
