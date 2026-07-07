@@ -195,12 +195,19 @@ const BlogCard = ({ item }) => (
           style={{
             color: "var(--muted)",
             fontSize: "12.5px",
-            margin: 0,
+            margin: "0 0 0.75rem",
             lineHeight: 1.5,
           }}
         >
           {item.subtitle}
         </p>
+      )}
+      {item.tags && item.tags.length > 0 && (
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "5px" }}>
+          {item.tags.map((tag, i) => (
+            <span key={i} className="badge">{tag}</span>
+          ))}
+        </div>
       )}
     </div>
   </a>
