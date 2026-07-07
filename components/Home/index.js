@@ -245,6 +245,109 @@ const Home = () => {
         </div>
       </section>
 
+      {/* ── Tech Stack ── */}
+      <TechStack />
+
+      {/* ── Education ── */}
+      <section style={{ paddingBottom: "3.5rem" }}>
+        <div className="container-wide">
+          <SectionHeader title="Education" href="#" />
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "1rem",
+            }}
+          >
+            {/* AIUB */}
+            <div
+              className="card"
+              style={{ padding: "1.5rem", flexDirection: "row", gap: "1.25rem", alignItems: "flex-start" }}
+            >
+              <img
+                src="/images/education/aiub.png"
+                alt="AIUB"
+                style={{
+                  width: "52px",
+                  height: "52px",
+                  objectFit: "contain",
+                  borderRadius: "8px",
+                  border: "1px solid var(--border)",
+                  background: "var(--bg)",
+                  padding: "4px",
+                  flexShrink: 0,
+                }}
+              />
+              <div>
+                <h3 style={{ fontWeight: 700, fontSize: "14px", margin: "0 0 3px", color: "var(--fg)", lineHeight: 1.35 }}>
+                  American International University-Bangladesh
+                </h3>
+                <p style={{ fontSize: "13px", color: "var(--muted)", margin: "0 0 6px" }}>
+                  BSc in Computer Science & Engineering
+                </p>
+                <span
+                  className="mono"
+                  style={{
+                    fontSize: "11px",
+                    color: "var(--muted)",
+                    background: "var(--bg)",
+                    border: "1px solid var(--border)",
+                    borderRadius: "20px",
+                    padding: "2px 10px",
+                    display: "inline-block",
+                  }}
+                >
+                  2017 – 2021
+                </span>
+              </div>
+            </div>
+
+            {/* BAF Shaheen College */}
+            <div
+              className="card"
+              style={{ padding: "1.5rem", flexDirection: "row", gap: "1.25rem", alignItems: "flex-start" }}
+            >
+              <img
+                src="/images/education/baf.png"
+                alt="BAF Shaheen College"
+                style={{
+                  width: "52px",
+                  height: "52px",
+                  objectFit: "contain",
+                  borderRadius: "8px",
+                  border: "1px solid var(--border)",
+                  background: "var(--bg)",
+                  padding: "4px",
+                  flexShrink: 0,
+                }}
+              />
+              <div>
+                <h3 style={{ fontWeight: 700, fontSize: "14px", margin: "0 0 3px", color: "var(--fg)", lineHeight: 1.35 }}>
+                  BAF Shaheen College, Dhaka
+                </h3>
+                <p style={{ fontSize: "13px", color: "var(--muted)", margin: "0 0 6px" }}>
+                  Higher Secondary School Certificate (HSC)
+                </p>
+                <span
+                  className="mono"
+                  style={{
+                    fontSize: "11px",
+                    color: "var(--muted)",
+                    background: "var(--bg)",
+                    border: "1px solid var(--border)",
+                    borderRadius: "20px",
+                    padding: "2px 10px",
+                    display: "inline-block",
+                  }}
+                >
+                  2014 – 2016
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Blogs ── */}
       <section style={{ paddingBottom: "3.5rem" }}>
         <div className="container-wide">
@@ -257,8 +360,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ── Tech Stack ── */}
-      <TechStack />
+      
 
       {/* ── Contact / Connect ── */}
       <section style={{ paddingBottom: "4rem" }}>
