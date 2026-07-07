@@ -78,8 +78,12 @@ const Header = () => {
           boxShadow: scrolled ? "0 2px 12px rgba(0,0,0,0.07)" : "none",
         }}
       >
-        <NextLink href="/" style={{ fontWeight: 700, fontSize: "15px", color: "var(--fg)", letterSpacing: "-0.3px" }}>
-          Protik
+        <NextLink href="/" style={{ display: "flex", alignItems: "center" }}>
+          <img
+            src="/bracket.png"
+            alt="Protik"
+            style={{ width: 32, height: 32, objectFit: "contain", opacity: 0.85 }}
+          />
         </NextLink>
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <ThemeToggleButton />
