@@ -79,6 +79,7 @@ const TechStack = () => (
         {techStackSections.map((section, idx) => (
           <div 
             key={section.title} 
+            className="tech-stack-row"
             style={{
               display: "flex",
               alignItems: "flex-start",
@@ -90,6 +91,7 @@ const TechStack = () => (
             }}
           >
             <div 
+              className="tech-stack-label"
               style={{
                 width: "150px",
                 flexShrink: 0,

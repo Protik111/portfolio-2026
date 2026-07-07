@@ -366,9 +366,42 @@ a {
 /* ── Mobile header offset ─────────────────────────── */
 @media (max-width: 720px) {
 
-  /* Push hero section below the fixed mobile bar */
   main section:first-child,
   section[style*="paddingTop"] {
     padding-top: 4rem !important;
+  }
+}
+
+/* ── Small-screen container padding ──────────────── */
+@media (max-width: 480px) {
+
+  .container-narrow,
+  .container-wide {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* ── Experience page: shrink date column on mid screens ── */
+@media (max-width: 820px) and (min-width: 661px) {
+  .exp-entry-grid {
+    grid-template-columns: 110px 20px 1fr !important;
+    gap: 0 14px !important;
+  }
+
+  .exp-date-text {
+    font-size: 11px !important;
+  }
+}
+
+/* ── Tech Stack: stack label above badges on mobile ── */
+@media (max-width: 540px) {
+  .tech-stack-row {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+  }
+
+  .tech-stack-label {
+    width: auto !important;
   }
 }
