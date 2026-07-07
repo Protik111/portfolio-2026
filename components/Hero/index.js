@@ -99,31 +99,46 @@ const Hero = () => {
               {
                 href: "https://github.com/Protik111",
                 label: "GitHub",
-                icon: <FaGithub size={15} color="#24292e" />,
+                icon: <FaGithub size={16} color="#24292e" />,
+                iconBg: "rgba(36,41,46,0.10)",
                 target: "_blank",
               },
               {
                 href: "https://www.linkedin.com/in/rafiur-rahman-protik/",
                 label: "LinkedIn",
-                icon: <FaLinkedin size={15} color="#0077B5" />,
+                icon: <FaLinkedin size={16} color="#0077B5" />,
+                iconBg: "rgba(0,119,181,0.10)",
                 target: "_blank",
               },
               {
                 href: "mailto:rafiurprotik111@gmail.com",
                 label: "Email me",
-                icon: <HiOutlineMail size={16} color="#7c3aed" />,
+                icon: <HiOutlineMail size={17} color="#7c3aed" />,
+                iconBg: "rgba(124,58,237,0.10)",
                 target: undefined,
               },
-            ].map(({ href, label, icon, target }) => (
+            ].map(({ href, label, icon, iconBg, target }) => (
               <a
                 key={label}
                 href={href}
                 target={target}
                 rel={target ? "noreferrer" : undefined}
                 className="btn-neo"
-                style={{ padding: "8px 16px", borderRadius: "10px", fontWeight: 500 }}
+                style={{ padding: "7px 14px 7px 7px", borderRadius: "10px", fontWeight: 500, gap: "8px" }}
               >
-                {icon} {label}
+                <span style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: 28,
+                  height: 28,
+                  borderRadius: "7px",
+                  background: iconBg,
+                  flexShrink: 0,
+                }}>
+                  {icon}
+                </span>
+                {label}
               </a>
             ))}
           </div>
