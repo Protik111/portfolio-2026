@@ -189,8 +189,8 @@ const ExperienceCard = ({ item, isLast }) => (
         {item.company} ↗
       </a>
 
-      <p style={styles.location}>
-        📍 {item.location} &nbsp;·&nbsp; {item.work_type}
+      <p style={styles.location} suppressHydrationWarning>
+        {item.location} {" · "} {item.work_type}
       </p>
 
       {/* Bullet points */}
@@ -240,8 +240,8 @@ const ExperienceCardMobile = ({ item }) => (
       {item.start_date} – {item.end_date}
       {item.duration ? ` · ${item.duration}` : ""}
     </p>
-    <p style={{ ...styles.location, marginTop: 0 }}>
-      📍 {item.location} · {item.work_type}
+    <p style={{ ...styles.location, marginTop: 0 }} suppressHydrationWarning>
+      {item.location} {" · "} {item.work_type}
     </p>
 
     <ul style={styles.bulletList}>
@@ -262,6 +262,39 @@ const ExperienceCardMobile = ({ item }) => (
     </div>
   </div>
 );
+
+const mentoringData = [
+  {
+    role: "Teaching Assistant",
+    company: "American International University-Bangladesh",
+    company_url: "https://www.aiub.edu",
+    start_date: "Sep 2021",
+    end_date: "Dec 2021",
+    location: "Dhaka, Bangladesh",
+    work_type: "On-site",
+    employment_type: "Part-time",
+    role_description: [
+      "Assigned primary classroom and laboratory responsibility.",
+      "Assisted students with their coding problems and debugging.",
+    ],
+    tech_stack: [],
+  },
+  {
+    role: "Mentor",
+    company: "Tech Serve4 U",
+    company_url: "#",
+    start_date: "Jul 2023",
+    end_date: "Aug 2024",
+    location: "Remote",
+    work_type: "Remote",
+    employment_type: "Part-time",
+    role_description: [
+      "Conducted MERN program, delivered content and live sessions.",
+      "Assisted students with technical guidance and real-time problem solving.",
+    ],
+    tech_stack: [],
+  },
+];
 
 const Experience = () => {
   return (
@@ -297,12 +330,14 @@ const Experience = () => {
 
         <main style={styles.main}>
           <div className="container-narrow">
+
+            {/* ── Work Experience ── */}
             <h1 className="section-heading">Experience</h1>
             <p style={styles.subtitle}>
               Where I&apos;ve worked and what I&apos;ve shipped.
             </p>
 
-            {/* ── Desktop: timeline layout ── */}
+            {/* Desktop: timeline layout */}
             <div className="exp-desktop" style={styles.timeline}>
               {experiencesData.map((item, i) => (
                 <ExperienceCard
@@ -313,12 +348,51 @@ const Experience = () => {
               ))}
             </div>
 
-            {/* ── Mobile: stacked cards ── */}
+            {/* Mobile: stacked cards */}
             <div className="exp-mobile">
               {experiencesData.map((item, i) => (
                 <ExperienceCardMobile key={i} item={item} />
               ))}
             </div>
+
+            {/* ── Mentoring Experience ── */}
+            <div style={{ marginTop: "3.5rem" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "0.5rem" }}>
+                <h2 className="section-heading" style={{ marginBottom: 0 }}>Mentoring</h2>
+                <span style={{
+                  fontSize: "11px",
+                  fontFamily: "var(--font-mono)",
+                  color: "var(--muted)",
+                  background: "var(--card-bg)",
+                  border: "1px solid var(--border)",
+                  borderRadius: "20px",
+                  padding: "3px 12px",
+                  whiteSpace: "nowrap",
+                }}>Teaching & Guidance</span>
+              </div>
+              <p style={{ ...styles.subtitle, marginBottom: "1.75rem" }}>
+                Sharing knowledge and guiding the next generation of developers.
+              </p>
+
+              {/* Desktop mentoring timeline */}
+              <div className="exp-desktop" style={styles.timeline}>
+                {mentoringData.map((item, i) => (
+                  <ExperienceCard
+                    key={i}
+                    item={item}
+                    isLast={i === mentoringData.length - 1}
+                  />
+                ))}
+              </div>
+
+              {/* Mobile mentoring cards */}
+              <div className="exp-mobile">
+                {mentoringData.map((item, i) => (
+                  <ExperienceCardMobile key={i} item={item} />
+                ))}
+              </div>
+            </div>
+
           </div>
         </main>
 
