@@ -7,7 +7,7 @@ const Resume = () => {
       <Seo title="Resume" />
       <div style={{ height: "100vh" }}>
         <iframe
-          src="https://rafiurrahmanprotik.netlify.app/resume/resume.pdf"
+          src="https://heyprotik.vercel.app/resume/resume.pdf"
           width="100%"
           height="100%"
         />
