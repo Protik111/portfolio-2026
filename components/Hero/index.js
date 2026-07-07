@@ -89,34 +89,43 @@ const Hero = () => {
           }}
         >
           <p style={{ margin: "0 0 1rem" }}>
-            I’m a passionate Full-stack Software Engineer building scalable, production-ready applications and cloud-native solutions. My expertise spans <strong>React.js, Next.js, TypeScript, Node.js, Docker, AWS, CI/CD, and microservices architecture</strong>.
+            I’m a passionate Full-stack Software Engineer with <strong>4+ years of experience</strong> building scalable, production-ready applications and cloud-native solutions. My expertise spans <strong>React.js, Next.js, TypeScript, Node.js, Docker, AWS, CI/CD, and microservices architecture</strong>.
           </p>
           <p style={{ margin: "0 0 1.25rem" }}>
             I focus on solving real-world problems with clean code, scalable design, and cost-efficient cloud solutions. From video streaming platforms to containerized microservices, I enjoy tackling complex technical challenges and building systems that scale.
           </p>
           <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginTop: "1.5rem" }}>
-            <a
-              href="https://github.com/Protik111"
-              target="_blank"
-              rel="noreferrer"
-              className="btn-neo"
-            >
-              <FaGithub size={15} /> GitHub
-            </a>
-            <a
-              href="https://www.linkedin.com/in/rafiur-rahman-protik/"
-              target="_blank"
-              rel="noreferrer"
-              className="btn-neo"
-            >
-              <FaLinkedin size={15} /> LinkedIn
-            </a>
-            <a
-              href="mailto:rafiurprotik111@gmail.com"
-              className="btn-neo"
-            >
-              <HiOutlineMail size={16} /> Email me
-            </a>
+            {[
+              {
+                href: "https://github.com/Protik111",
+                label: "GitHub",
+                icon: <FaGithub size={15} color="#24292e" />,
+                target: "_blank",
+              },
+              {
+                href: "https://www.linkedin.com/in/rafiur-rahman-protik/",
+                label: "LinkedIn",
+                icon: <FaLinkedin size={15} color="#0077B5" />,
+                target: "_blank",
+              },
+              {
+                href: "mailto:rafiurprotik111@gmail.com",
+                label: "Email me",
+                icon: <HiOutlineMail size={16} color="#7c3aed" />,
+                target: undefined,
+              },
+            ].map(({ href, label, icon, target }) => (
+              <a
+                key={label}
+                href={href}
+                target={target}
+                rel={target ? "noreferrer" : undefined}
+                className="btn-neo"
+                style={{ padding: "8px 16px", borderRadius: "10px", fontWeight: 500 }}
+              >
+                {icon} {label}
+              </a>
+            ))}
           </div>
         </div>
 

@@ -362,3 +362,13 @@ a {
     font-size: 1.75rem;
   }
 }
+
+/* ── Mobile header offset ─────────────────────────── */
+@media (max-width: 720px) {
+
+  /* Push hero section below the fixed mobile bar */
+  main section:first-child,
+  section[style*="paddingTop"] {
+    padding-top: 4rem !important;
+  }
+}
