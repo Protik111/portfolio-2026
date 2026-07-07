@@ -163,14 +163,117 @@ a {
 .card {
   background: var(--card-bg);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .card:hover {
   border-color: var(--muted);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] .card:hover {
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.02);
+}
+
+/* ── Tooltips ─────────────────────────────────────── */
+.tooltip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: auto;
+  background-color: var(--fg);
+  color: var(--bg);
+  text-align: center;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  white-space: nowrap;
+  position: absolute;
+  z-index: 50;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.2s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--fg) transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ── Theme Image Toggling ─────────────────────────── */
+[data-theme='dark'] .img-light {
+  display: none !important;
+}
+
+[data-theme='light'] .img-dark {
+  display: none !important;
+}
+
+:root:not([data-theme='dark']) .img-dark {
+  display: none !important;
+}
+
+/* ── Link Hover ───────────────────────────────────── */
+.link-hover {
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.link-hover:hover {
+  color: var(--fg) !important;
+  transform: scale(1.08);
+}
+
+/* ── Pulse Animation ──────────────────────────────── */
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+}
+
+.pulse-dot {
+  animation: pulse 2s infinite ease-in-out;
 }
 
 /* ── Divider ──────────────────────────────────────── */
