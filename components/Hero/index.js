@@ -121,7 +121,6 @@ const Hero = () => {
         </div>
 
         <div style={{ marginTop: "3.5rem", display: "flex", flexDirection: "column", gap: "1.5rem", paddingBottom: "2rem" }}>
-          {/* Terminal Block */}
           <div>
             <div
               style={{
@@ -144,7 +143,7 @@ const Hero = () => {
                   <span style={{ color: "#7ee787" }}>$</span> whoami
                 </p>
                 <p style={{ margin: "0 0 1rem", color: "#8b949e" }}>
-                  System Architect & Full-stack Engineer
+                  Full-stack Software Engineer
                 </p>
                 <p style={{ margin: "0 0 0.5rem" }}>
                   <span style={{ color: "#7ee787" }}>$</span> ./deploy --env production
