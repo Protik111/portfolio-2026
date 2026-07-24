@@ -50,32 +50,50 @@ const ExperienceRow = ({ item, isLast }) => (
       marginBottom: isLast ? 0 : "1.25rem",
     }}
   >
-    {/* dot + line */}
+    {/* logo + line */}
     <div
       style={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        paddingTop: "5px",
+        paddingTop: "2px",
         flexShrink: 0,
       }}
     >
-      <div
-        style={{
-          width: "8px",
-          height: "8px",
-          borderRadius: "50%",
-          background: "var(--fg)",
-          flexShrink: 0,
-        }}
-      />
+      {item.logo ? (
+        <img
+          src={item.logo}
+          alt={item.company}
+          style={{
+            width: "36px",
+            height: "36px",
+            objectFit: "contain",
+            borderRadius: "6px",
+            border: "1px solid var(--border)",
+            background: "var(--bg)",
+            padding: "3px",
+            flexShrink: 0,
+          }}
+        />
+      ) : (
+        <div
+          style={{
+            width: "8px",
+            height: "8px",
+            borderRadius: "50%",
+            background: "var(--fg)",
+            flexShrink: 0,
+            marginTop: "12px",
+          }}
+        />
+      )}
       {!isLast && (
         <div
           style={{
             width: "1px",
             flex: 1,
             background: "var(--border)",
-            marginTop: "6px",
+            marginTop: "8px",
           }}
         />
       )}

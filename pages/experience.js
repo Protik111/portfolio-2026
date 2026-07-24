@@ -9,6 +9,7 @@ const mentoringData = [
     role: "Teaching Assistant",
     company: "American International University-Bangladesh",
     company_url: "https://www.aiub.edu",
+    logo: "/images/experience/aiub.svg",
     start_date: "Sep 2021",
     end_date: "Dec 2021",
     duration: null,
@@ -25,6 +26,7 @@ const mentoringData = [
     role: "Mentor",
     company: "Tech Serve4 U",
     company_url: "https://techserve4u.com/",
+    logo: "/images/experience/techserve4u.jpeg",
     start_date: "Jul 2023",
     end_date: "Aug 2024",
     duration: null,
@@ -50,71 +52,93 @@ const ExperienceCard = ({ item }) => (
       padding: "1.25rem 1.5rem",
       marginBottom: "1rem",
       transition: "border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease",
+      display: "flex",
+      gap: "1.25rem",
+      alignItems: "flex-start",
     }}
   >
-    {/* Top row: role + badge */}
-    <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", flexWrap: "wrap", gap: "6px", marginBottom: "4px" }}>
-      <h2 style={{ fontSize: "15px", fontWeight: 700, fontFamily: "var(--font-sans)", margin: 0, color: "var(--fg)" }}>
-        {item.role}
-      </h2>
-      <span style={{
-        fontSize: "11px",
-        fontFamily: "var(--font-mono)",
-        color: "var(--muted)",
-        background: "var(--bg)",
-        border: "1px solid var(--border)",
-        borderRadius: "20px",
-        padding: "2px 10px",
-        whiteSpace: "nowrap",
-      }}>
-        {item.employment_type}
-      </span>
-    </div>
-
-    {/* Company link */}
-    <a
-      href={item.company_url}
-      target="_blank"
-      rel="noreferrer"
-      className="company-link"
-      style={{
-        fontSize: "13px",
-        fontWeight: 600,
-        color: "var(--muted)",
-        textDecoration: "none",
-        display: "inline-block",
-        marginBottom: "4px",
-        transition: "color 0.15s",
-      }}
-    >
-      {item.company} ↗
-    </a>
-
-    {/* Date + location row */}
-    <p style={{ fontSize: "12px", color: "var(--muted)", fontFamily: "var(--font-mono)", margin: "0 0 1rem", opacity: 0.85, lineHeight: 1.6 }} suppressHydrationWarning>
-      {item.start_date} – {item.end_date}
-      {item.duration ? ` · ${item.duration}` : ""}
-      &nbsp;·&nbsp; {item.location} &nbsp;·&nbsp; {item.work_type}
-    </p>
-
-    {/* Bullet points */}
-    <ul style={{ listStyle: "none", padding: 0, margin: "0 0 1rem", display: "flex", flexDirection: "column", gap: "8px" }}>
-      {item.role_description.map((desc, i) => (
-        <li key={i} style={{ display: "flex", gap: "8px", fontSize: "13.5px", lineHeight: 1.7, color: "var(--fg)", alignItems: "flex-start" }}>
-          <span style={{ color: "var(--muted)", flexShrink: 0, marginTop: "2px" }}>—</span>
-          <span>{desc}</span>
-        </li>
-      ))}
-    </ul>
-
-    {/* Tech badges */}
-    {item.tech_stack.length > 0 && (
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
-        {item.tech_stack.map((tech, i) => (
-          <span key={i} className="badge">{tech}</span>
-        ))}
-      </div>
+    {item.logo && (
+      <img
+        src={item.logo}
+        alt={item.company}
+        style={{
+          width: "48px",
+          height: "48px",
+          objectFit: "contain",
+          borderRadius: "8px",
+          border: "1px solid var(--border)",
+          background: "var(--bg)",
+          padding: "4px",
+          flexShrink: 0,
+          marginTop: "4px",
+        }}
+      />
     )}
+    <div style={{ flex: 1, minWidth: 0 }}>
+      {/* Top row: role + badge */}
+      <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", flexWrap: "wrap", gap: "6px", marginBottom: "4px" }}>
+        <h2 style={{ fontSize: "15px", fontWeight: 700, fontFamily: "var(--font-sans)", margin: 0, color: "var(--fg)" }}>
+          {item.role}
+        </h2>
+        <span style={{
+          fontSize: "11px",
+          fontFamily: "var(--font-mono)",
+          color: "var(--muted)",
+          background: "var(--bg)",
+          border: "1px solid var(--border)",
+          borderRadius: "20px",
+          padding: "2px 10px",
+          whiteSpace: "nowrap",
+        }}>
+          {item.employment_type}
+        </span>
+      </div>
+
+      {/* Company link */}
+      <a
+        href={item.company_url}
+        target="_blank"
+        rel="noreferrer"
+        className="company-link"
+        style={{
+          fontSize: "13px",
+          fontWeight: 600,
+          color: "var(--muted)",
+          textDecoration: "none",
+          display: "inline-block",
+          marginBottom: "4px",
+          transition: "color 0.15s",
+        }}
+      >
+        {item.company} ↗
+      </a>
+
+      {/* Date + location row */}
+      <p style={{ fontSize: "12px", color: "var(--muted)", fontFamily: "var(--font-mono)", margin: "0 0 1rem", opacity: 0.85, lineHeight: 1.6 }} suppressHydrationWarning>
+        {item.start_date} – {item.end_date}
+        {item.duration ? ` · ${item.duration}` : ""}
+        &nbsp;·&nbsp; {item.location} &nbsp;·&nbsp; {item.work_type}
+      </p>
+
+      {/* Bullet points */}
+      <ul style={{ listStyle: "none", padding: 0, margin: "0 0 1rem", display: "flex", flexDirection: "column", gap: "8px" }}>
+        {item.role_description.map((desc, i) => (
+          <li key={i} style={{ display: "flex", gap: "8px", fontSize: "13.5px", lineHeight: 1.7, color: "var(--fg)", alignItems: "flex-start" }}>
+            <span style={{ color: "var(--muted)", flexShrink: 0, marginTop: "2px" }}>—</span>
+            <span>{desc}</span>
+          </li>
+        ))}
+      </ul>
+
+      {/* Tech badges */}
+      {item.tech_stack && item.tech_stack.length > 0 && (
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+          {item.tech_stack.map((tech, i) => (
+            <span key={i} className="badge">{tech}</span>
+          ))}
+        </div>
+      )}
+    </div>
   </div>
 );
 
