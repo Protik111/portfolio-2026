@@ -405,3 +405,90 @@ a {
     width: auto !important;
   }
 }
+
+/* ── Reload Loader ──────────────────────────────────────────────────
+   Hidden by default; only shown when the inline script in _document.js
+   flags an actual reload of "/" via the `is-reload-loading` class on
+   <html> — set before this markup is even parsed, so there's no flash
+   of homepage content underneath. See components/Loader.
+─────────────────────────────────────────────────────────────────── */
+.celestial-loader {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+/* Solid, not transparent — white in light mode, black in dark mode, so it
+   matches whichever theme the site is in. Needs to beat the "#__next > div
+   { background: transparent !important }" rule above (it targets every
+   direct-child div under #__next, which .celestial-loader is one of),
+   hence the extra specificity here rather than a plain .celestial-loader
+   background rule. */
+#__next > .celestial-loader {
+  background: #ffffff !important;
+}
+
+[data-theme='dark'] #__next > .celestial-loader {
+  background: #000000 !important;
+}
+
+html.is-reload-loading .celestial-loader {
+  display: flex;
+}
+
+.celestial-loader.is-leaving {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.celestial-logo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  animation: celestial-pulse 1.6s ease-in-out infinite;
+}
+
+.celestial-name {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0;
+}
+
+.celestial-percent {
+  color: #7c3aed;
+  font-weight: 700;
+}
+
+[data-theme='dark'] .celestial-percent {
+  color: #a78bfa;
+}
+
+@keyframes celestial-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .celestial-logo {
+    animation: none;
+  }
+}
+
