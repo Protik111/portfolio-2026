@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://ayushsoni1010.com
+Host: https://protikdev.vercel.app
 
 # Sitemaps
-Sitemap: https://ayushsoni1010.com/sitemap.xml
+Sitemap: https://protikdev.vercel.app/sitemap.xml
