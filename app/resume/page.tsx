@@ -6,7 +6,7 @@ export const metadata: Metadata = buildMetadata({ title: "Resume", path: "/resum
 const Resume = () => {
   return (
     <div className="h-screen">
-      <iframe src="https://heyprotik.vercel.app/resume/resume.pdf" title="Resume" width="100%" height="100%" />
+      <iframe src="/resume/resume.pdf" title="Resume" width="100%" height="100%" />
     </div>
   );
 };
