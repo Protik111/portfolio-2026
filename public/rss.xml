@@ -4,7 +4,7 @@
         <description><![CDATA[Hey! I am Protik, a full-stack developer from Bangladesh.]]></description>
         <link>https://protikdev.vercel.app</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 25 Aug 2026 13:01:05 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 25 Aug 2026 13:06:17 GMT</lastBuildDate>
         <atom:link href="https://protikdev.vercel.app/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[Rafiur Rahman Protik | 2026]]></copyright>
         <language><![CDATA[en]]></language>
@@ -34,17 +34,20 @@
             <dc:creator><![CDATA[Rafiur Rahman Protik]]></dc:creator>
         </item>
         <item>
-            <title><![CDATA[Git Together: Pro Tips for Commits and Branches]]></title>
-            <description><![CDATA[Maximize Git efficiency for smooth development]]></description>
-            <link>https://protikdev.vercel.app/blogs/git-together-pro-tips-for-commits-and-branches</link>
-            <guid isPermaLink="true">https://protikdev.vercel.app/blogs/git-together-pro-tips-for-commits-and-branches</guid>
+            <title><![CDATA[Deploy your React app using GitHub pages]]></title>
+            <description><![CDATA[Showcase your React app to the world with Github Pages]]></description>
+            <link>https://protikdev.vercel.app/blogs/deploy-your-react-app-using-github-pages</link>
+            <guid isPermaLink="true">https://protikdev.vercel.app/blogs/deploy-your-react-app-using-github-pages</guid>
             <category><![CDATA[Open Source]]></category>
-            <category><![CDATA[Git]]></category>
+            <category><![CDATA[React]]></category>
             <category><![CDATA[GitHub]]></category>
-            <category><![CDATA[Version Control System]]></category>
-            <category><![CDATA[Development]]></category>
+            <category><![CDATA[JavaScript]]></category>
+            <category><![CDATA[Deployment]]></category>
+            <category><![CDATA[GitHub Pages]]></category>
+            <category><![CDATA[Web Development]]></category>
+            <category><![CDATA[JavaScript]]></category>
             <dc:creator><![CDATA[Rafiur Rahman Protik]]></dc:creator>
-            <pubDate>Sun, 21 Jul 2024 18:00:00 GMT</pubDate>
+            <pubDate>Sun, 02 Apr 2023 18:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Crafting Effective Chaos Error Messages]]></title>
@@ -64,60 +67,6 @@
             <category><![CDATA[UX Writing]]></category>
             <dc:creator><![CDATA[Rafiur Rahman Protik]]></dc:creator>
             <pubDate>Sat, 25 Mar 2023 18:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Deploy your React app using GitHub pages]]></title>
-            <description><![CDATA[Showcase your React app to the world with Github Pages]]></description>
-            <link>https://protikdev.vercel.app/blogs/deploy-your-react-app-using-github-pages</link>
-            <guid isPermaLink="true">https://protikdev.vercel.app/blogs/deploy-your-react-app-using-github-pages</guid>
-            <category><![CDATA[Open Source]]></category>
-            <category><![CDATA[React]]></category>
-            <category><![CDATA[GitHub]]></category>
-            <category><![CDATA[JavaScript]]></category>
-            <category><![CDATA[Deployment]]></category>
-            <category><![CDATA[GitHub Pages]]></category>
-            <category><![CDATA[Web Development]]></category>
-            <category><![CDATA[JavaScript]]></category>
-            <dc:creator><![CDATA[Rafiur Rahman Protik]]></dc:creator>
-            <pubDate>Sun, 02 Apr 2023 18:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[HTTP Status Codes]]></title>
-            <description><![CDATA[Understanding the Meaning and Significance of HTTP Status Codes]]></description>
-            <link>https://protikdev.vercel.app/blogs/http-status-codes</link>
-            <guid isPermaLink="true">https://protikdev.vercel.app/blogs/http-status-codes</guid>
-            <category><![CDATA[Network]]></category>
-            <category><![CDATA[HTTP]]></category>
-            <category><![CDATA[Status]]></category>
-            <category><![CDATA[Errors]]></category>
-            <category><![CDATA[Codes]]></category>
-            <category><![CDATA[Protocol]]></category>
-            <category><![CDATA[Server]]></category>
-            <dc:creator><![CDATA[Rafiur Rahman Protik]]></dc:creator>
-            <pubDate>Fri, 24 Mar 2023 18:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Build an API with Serverless Functions in Next.js]]></title>
-            <description><![CDATA[Creating Efficient and Scalable Serverless APIs]]></description>
-            <link>https://protikdev.vercel.app/blogs/build-an-api-with-serverless-functions-in-nextjs</link>
-            <guid isPermaLink="true">https://protikdev.vercel.app/blogs/build-an-api-with-serverless-functions-in-nextjs</guid>
-            <category><![CDATA[Open Source]]></category>
-            <category><![CDATA[JavaScript]]></category>
-            <category><![CDATA[Node.js]]></category>
-            <category><![CDATA[API]]></category>
-            <category><![CDATA[Network]]></category>
-            <category><![CDATA[Routing]]></category>
-            <category><![CDATA[Request]]></category>
-            <category><![CDATA[Response]]></category>
-            <category><![CDATA[Server]]></category>
-            <category><![CDATA[Client]]></category>
-            <category><![CDATA[React]]></category>
-            <category><![CDATA[Next.js]]></category>
-            <category><![CDATA[Hooks]]></category>
-            <category><![CDATA[Serverless Functions]]></category>
-            <category><![CDATA[Vercel]]></category>
-            <dc:creator><![CDATA[Rafiur Rahman Protik]]></dc:creator>
-            <pubDate>Fri, 31 Mar 2023 18:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Hacking at MLH HackCon]]></title>
@@ -140,21 +89,6 @@
             <category><![CDATA[Community Leaders]]></category>
             <dc:creator><![CDATA[Rafiur Rahman Protik]]></dc:creator>
             <pubDate>Fri, 16 Dec 2022 18:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[How to deploy the Headless CMS Strapi app on Heroku]]></title>
-            <description><![CDATA[Get started with the Strapi headless CMS]]></description>
-            <link>https://protikdev.vercel.app/blogs/how-to-deploy-the-headless-cms-strapi-app-on-heroku</link>
-            <guid isPermaLink="true">https://protikdev.vercel.app/blogs/how-to-deploy-the-headless-cms-strapi-app-on-heroku</guid>
-            <category><![CDATA[Open Source]]></category>
-            <category><![CDATA[Headless CMS]]></category>
-            <category><![CDATA[Strapi]]></category>
-            <category><![CDATA[Node.js]]></category>
-            <category><![CDATA[Heroku]]></category>
-            <category><![CDATA[PostgreSQL]]></category>
-            <category><![CDATA[Community]]></category>
-            <dc:creator><![CDATA[Rafiur Rahman Protik]]></dc:creator>
-            <pubDate>Tue, 14 Dec 2021 18:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[How to install fastn on your local machine]]></title>
@@ -181,17 +115,34 @@
             <pubDate>Tue, 02 May 2023 18:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Lets Grow with LetsGrowMore]]></title>
-            <description><![CDATA[A constructive blog on open source contribution program and other opportunities]]></description>
-            <link>https://protikdev.vercel.app/blogs/lets-grow-with-letsgrowmore</link>
-            <guid isPermaLink="true">https://protikdev.vercel.app/blogs/lets-grow-with-letsgrowmore</guid>
+            <title><![CDATA[How to deploy the Headless CMS Strapi app on Heroku]]></title>
+            <description><![CDATA[Get started with the Strapi headless CMS]]></description>
+            <link>https://protikdev.vercel.app/blogs/how-to-deploy-the-headless-cms-strapi-app-on-heroku</link>
+            <guid isPermaLink="true">https://protikdev.vercel.app/blogs/how-to-deploy-the-headless-cms-strapi-app-on-heroku</guid>
             <category><![CDATA[Open Source]]></category>
-            <category><![CDATA[LetsGrowMore]]></category>
+            <category><![CDATA[Headless CMS]]></category>
+            <category><![CDATA[Strapi]]></category>
+            <category><![CDATA[Node.js]]></category>
+            <category><![CDATA[Heroku]]></category>
+            <category><![CDATA[PostgreSQL]]></category>
             <category><![CDATA[Community]]></category>
-            <category><![CDATA[Open Source Program]]></category>
-            <category><![CDATA[LGMSOC'21]]></category>
             <dc:creator><![CDATA[Rafiur Rahman Protik]]></dc:creator>
-            <pubDate>Wed, 22 Sep 2021 18:00:00 GMT</pubDate>
+            <pubDate>Tue, 14 Dec 2021 18:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[HTTP Status Codes]]></title>
+            <description><![CDATA[Understanding the Meaning and Significance of HTTP Status Codes]]></description>
+            <link>https://protikdev.vercel.app/blogs/http-status-codes</link>
+            <guid isPermaLink="true">https://protikdev.vercel.app/blogs/http-status-codes</guid>
+            <category><![CDATA[Network]]></category>
+            <category><![CDATA[HTTP]]></category>
+            <category><![CDATA[Status]]></category>
+            <category><![CDATA[Errors]]></category>
+            <category><![CDATA[Codes]]></category>
+            <category><![CDATA[Protocol]]></category>
+            <category><![CDATA[Server]]></category>
+            <dc:creator><![CDATA[Rafiur Rahman Protik]]></dc:creator>
+            <pubDate>Fri, 24 Mar 2023 18:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[MVC, MVP, MVVM, MVVM-C, and VIPER architecture patterns]]></title>
@@ -210,6 +161,19 @@
             <category><![CDATA[Router]]></category>
             <dc:creator><![CDATA[Rafiur Rahman Protik]]></dc:creator>
             <pubDate>Thu, 23 Mar 2023 18:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Lets Grow with LetsGrowMore]]></title>
+            <description><![CDATA[A constructive blog on open source contribution program and other opportunities]]></description>
+            <link>https://protikdev.vercel.app/blogs/lets-grow-with-letsgrowmore</link>
+            <guid isPermaLink="true">https://protikdev.vercel.app/blogs/lets-grow-with-letsgrowmore</guid>
+            <category><![CDATA[Open Source]]></category>
+            <category><![CDATA[LetsGrowMore]]></category>
+            <category><![CDATA[Community]]></category>
+            <category><![CDATA[Open Source Program]]></category>
+            <category><![CDATA[LGMSOC'21]]></category>
+            <dc:creator><![CDATA[Rafiur Rahman Protik]]></dc:creator>
+            <pubDate>Wed, 22 Sep 2021 18:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Supercharge your React app with useSWR]]></title>
