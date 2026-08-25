@@ -1,4 +1,4 @@
-## Contributing to Ayush Soni's Portfolio Website 🚀
+## Contributing to Rafiur Rahman Protik's Portfolio Website 🚀
 
 First of all, thank you for considering contributing to my portfolio website! Your contributions are highly valued, and they play a significant role in improving the user experience and content.
 
@@ -6,19 +6,19 @@ First of all, thank you for considering contributing to my portfolio website! Yo
 
 There are several ways you can contribute to this project:
 
-- **Bug Reporting**: If you find any issues or bugs while exploring my portfolio, please report them in the [issue tracker](https://github.com/ayushsoni1010/portfolio/issues).
+- **Bug Reporting**: If you find any issues or bugs while exploring my portfolio, please report them in the [issue tracker](https://github.com/Protik111/portfolio-2026/issues).
 
-- **Feature Requests**: Have an idea for a new feature or improvement? Feel free to suggest it in the [issue tracker](https://github.com/ayushsoni1010/portfolio/issues).
+- **Feature Requests**: Have an idea for a new feature or improvement? Feel free to suggest it in the [issue tracker](https://github.com/Protik111/portfolio-2026/issues).
 
 - **Content Enhancements**: If you come across typos, outdated information, or content that needs improvement, please consider submitting a pull request.
 
 - **Design Improvements**: If you have design suggestions or improvements, whether it's related to layout, styling, or visuals, your input is valuable.
 
-- **Code Contributions**: If you have technical skills and would like to make code contributions, check out the [GitHub repository](https://github.com/ayushsoni1010/portfolio) and open a pull request with your changes.
+- **Code Contributions**: If you have technical skills and would like to make code contributions, check out the [GitHub repository](https://github.com/Protik111/portfolio-2026) and open a pull request with your changes.
 
 ## Getting Started 🏁
 
-1. **Fork the Repository**: Start by forking the [portfolio repository](https://github.com/ayushsoni1010/portfolio) to your own GitHub account.
+1. **Fork the Repository**: Start by forking the [portfolio repository](https://github.com/Protik111/portfolio-2026) to your own GitHub account.
 
 2. **Clone the Repository**: Clone your forked repository to your local machine using `git clone`.
 
@@ -30,7 +30,7 @@ There are several ways you can contribute to this project:
 
 6. **Push Changes**: Push your changes to your forked repository on GitHub.
 
-7. **Open a Pull Request**: Open a pull request against the `main` branch of the [original repository](https://github.com/ayushsoni1010/portfolio). Provide a clear and detailed description of your changes.
+7. **Open a Pull Request**: Open a pull request against the `main` branch of the [original repository](https://github.com/Protik111/portfolio-2026). Provide a clear and detailed description of your changes.
 
 ## Code of Conduct 📜
 

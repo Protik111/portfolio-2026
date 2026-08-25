@@ -5,16 +5,16 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Tech%20Stack-Next.js%20%7C%20Chakra_UI%20%7C%20Three.js%20%7C%20TyepScript%20%7C%20Node.js%20%7C%20TailwindCSS%20%7C%20Markdown-0288d1.svg" alt="Tech Stack" />
+  <img src="https://img.shields.io/badge/Tech%20Stack-Next.js%20%7C%20TypeScript%20%7C%20TailwindCSS%20%7C%20Node.js%20%7C%20Markdown-0288d1.svg" alt="Tech Stack" />
 </p>
 
 <p align="center">
-  <i>Unlocking creativity one line of code at a time – the digital journey of a nomadic software engineer!</i>
+  <i>Unlocking creativity one line of code at a time – the digital journey of a full-stack software engineer!</i>
 </p>
 
-## Embark on a Journey with Ayush Soni 🌟
+## Embark on a Journey with Rafiur Rahman Protik 🌟
 
-Welcome to my portfolio! I'm Ayush Soni, hailing from Bangladesh. Join me on a captivating journey where you can explore my projects, experiences, and much more. Feel free to explore the various sections and discover the world I've created.
+Welcome to my portfolio! I'm Rafiur Rahman Protik, hailing from Bangladesh. Join me on a captivating journey where you can explore my projects, experiences, and much more. Feel free to explore the various sections and discover the world I've created.
 
 ## Table of Contents
 
@@ -24,7 +24,6 @@ Welcome to my portfolio! I'm Ayush Soni, hailing from Bangladesh. Join me on a c
 - [Featured Timeline](#featured-timeline-)
 - [Get in Touch](#get-in-touch-)
 - [Deliverables](#deliverables-)
-- [Craft Components](#craft-components-)
 - [Tech Stack Used](#tech-stack-used-)
 - [Getting Started](#getting-started-)
 - [Learn More](#learn-more-)
@@ -35,71 +34,62 @@ Welcome to my portfolio! I'm Ayush Soni, hailing from Bangladesh. Join me on a c
 
 ## Quick Links 🚀
 
-- [Website](https://www.ayushsoni1010.com/)
-- [LinkedIn](https://www.linkedin.com/in/ayushsoni1010/)
-- [Twitter](https://twitter.com/ayushsoni1010)
-- [GitHub](https://github.com/ayushsoni1010)
-- [Resume](https://ayushsoni1010.com/resume)
-- [Schedule a Call](https://ayushsoni1010.com/cal)
-- [Blogs](https://ayushsoni1010.com/blogs)
+- [Website](https://protikdev.vercel.app/)
+- [LinkedIn](https://www.linkedin.com/in/rafiur-rahman-protik/)
+- [Twitter](https://x.com/Protik111)
+- [GitHub](https://github.com/Protik111)
+- [Resume](https://protikdev.vercel.app/resume)
+- [Schedule a Call](https://calendly.com/rafiurprotik111)
+- [Blogs](https://protikdev.vercel.app/blogs)
 
 ## About Me 👨🏻‍💻
 
-This is Ayush Soni, a passionate full-stack developer and devrel engineer with a love for open-source and UI designing. I specialize in building robust and scalable SaaS products, microservices, and design systems. With a strong grasp of frontend and backend architecture, I create intuitive designs for engaging user experiences.
+This is Rafiur Rahman Protik, a full-stack Software Engineer with 4+ years of experience building scalable, production-ready applications and cloud-native solutions. My expertise spans React.js, Next.js, TypeScript, Node.js, Docker, AWS, CI/CD, and microservices architecture.
 
-I have extensive experience in Javascript and Typescript, using them professionally and for personal projects. I'm involved in hackathons, open-source contributions, and community building as both a participant and mentor. Additionally, I also lead community initiatives, offer software development sessions, and provide team leadership.
+I focus on solving real-world problems with clean code, scalable design, and cost-efficient cloud solutions. From video streaming platforms to containerized microservices, I enjoy tackling complex technical challenges and building systems that scale.
 
 ## Projects 📂
 
-Explore my featured projects and experience my work firsthand. My portfolio showcases a diverse range of [projects](https://ayushsoni1010.com/projects), including web applications, mobile apps, and more.
+Explore my featured projects and experience my work firsthand. My portfolio showcases a diverse range of [projects](https://protikdev.vercel.app/projects), including microservices platforms, distributed systems, and full-stack applications.
 
 ## Featured Timeline 📅
 
-Get insights into my professional [journey](https://ayushsoni1010.com) and the milestones I've achieved throughout my career.
+Get insights into my professional [journey](https://protikdev.vercel.app/experience) and the milestones I've achieved throughout my career.
 
 ## Get in Touch 📬
 
-Feel free to reach out to me via email at [ayushsoni1010.work@gmail.com](mailto:ayushsoni1010.work@gmail.com). I'm open to collaborations, discussions, and new opportunities.
+Feel free to reach out to me via email at [rafiurprotik111@gmail.com](mailto:rafiurprotik111@gmail.com). I'm open to collaborations, discussions, and new opportunities.
 
 ## Deliverables 🎯
 
 Explore my portfolio and discover the incredible projects and experiences I've had the privilege to work on. Join me on my journey, and let's create something amazing together!
 
-## Craft Components 🎨
-
-For a more detailed view of my skills and expertise, visit my [Craft Component Page](https://www.ayushsoni1010.com/crafts).
-
 ## Tech Stack Used 💅🏻
 Here's a glimpse of the technologies I've used:
 
 - Next.js
-- Chakra UI
-- Three.js
 - TypeScript
+- Tailwind CSS
 - Node.js
-- TailwindCSS
 - MDX
-- JavaScript
-- Scripting
 - CI/CD
 - GitHub Actions
 - Vercel
 
 ## Getting Started 🚀
 
-To get started with Portfoliogram, follow the installation instructions in the project's documentation.
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/) project using the App Router.
 
 1. Clone the repository to your local machine:
 
 ```
-git clone https://github.com/ayushsoni1010/portfolio.git
+git clone https://github.com/Protik111/portfolio-2026.git
 ```
 
 2. Install the required dependencies:
 
 ```
-cd portfolio
+cd portfolio-2026
 npm install
 ```
 
@@ -109,17 +99,11 @@ npm install
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-5. First, run the development server and access the portfolio in your web browser at [http://localhost:3000](http://localhost:3000) to see the result.
+5. Run the development server and access the portfolio in your web browser at [http://localhost:3000](http://localhost:3000) to see the result.
 
-6. You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-7. [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-8. The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+6. You can start editing the homepage by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 ## Learn More 💡
 
@@ -138,19 +122,15 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Contributing 🤝
 
-Contributions to the Portfolio are welcome! Feel free to open issues, submit pull requests, or provide feedback to help improve the project.
+Contributions to the Portfolio are welcome! Feel free to open issues, submit pull requests, or provide feedback to help improve the project. If you'd like to contribute, please follow our [contributing guidelines](CONTRIBUTING.md).
 
 ## License 📜
 
 This project is licensed under the [MIT License](LICENSE).
 
-## Contributing 🚀
-
-I welcome contributions to enhance my Portfolio. If you'd like to contribute, please follow our [contributing guidelines](CONTRIBUTING.md).
-
 ## Issues 🐛
 
-If you encounter any issues or have suggestions, please report them in the [issue tracker](https://github.com/ayushsoni1010/portfolio/issues).
+If you encounter any issues or have suggestions, please report them in the [issue tracker](https://github.com/Protik111/portfolio-2026/issues).
 
 ---
 

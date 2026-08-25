@@ -1,6 +1,6 @@
-# Code of Conduct for Ayush Soni's Portfolio Website 🤝
+# Code of Conduct for Rafiur Rahman Protik's Portfolio Website 🤝
 
-Welcome to Ayush Soni's Portfolio Website! To maintain a welcoming and inclusive environment for everyone, we have established this Code of Conduct.
+Welcome to Rafiur Rahman Protik's Portfolio Website! To maintain a welcoming and inclusive environment for everyone, we have established this Code of Conduct.
 
 ## Our Commitment 💫
 
@@ -36,7 +36,7 @@ We do not tolerate any form of harassment, discrimination, or offensive behavior
 
 ## Reporting Violations 🚀
 
-If you witness or experience unacceptable behavior while interacting with Ayush Soni's Portfolio Website, please report it immediately to [ayushsoni1010.work@gmail.com](mailto:ayushsoni1010.work@gmail.com). All reports will be reviewed and investigated promptly, and appropriate actions will be taken.
+If you witness or experience unacceptable behavior while interacting with Rafiur Rahman Protik's Portfolio Website, please report it immediately to [rafiurprotik111@gmail.com](mailto:rafiurprotik111@gmail.com). All reports will be reviewed and investigated promptly, and appropriate actions will be taken.
 
 ## Enforcement 🛡️
 
@@ -44,6 +44,6 @@ If any participant engages in behavior that violates this Code of Conduct, the p
 
 ## Our Pledge 🤗
 
-By participating in Ayush Soni's Portfolio Website, you agree to uphold this Code of Conduct. We are committed to fostering a safe, inclusive, and respectful community. Together, we can build amazing contributions and make a positive impact.
+By participating in Rafiur Rahman Protik's Portfolio Website, you agree to uphold this Code of Conduct. We are committed to fostering a safe, inclusive, and respectful community. Together, we can build amazing contributions and make a positive impact.
 
 Thank you for being a part of this journey! 🙏
