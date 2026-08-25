@@ -5,14 +5,14 @@ const matter = require("gray-matter");
 
 exports.generate = async () => {
   const feed = new RSS({
-    title: "Ayush Soni",
-    description: "Hey! I am Ayush, a full-stack developer from Bangladesh",
-    feed_url: "https://ayushsoni1010.com/feed.xml",
-    site_url: "https://ayushsoni1010.com",
-    managingEditor: "Ayush Soni",
-    webMaster: "Ayush Soni",
+    title: "Rafiur Rahman Protik",
+    description: "Hey! I am Protik, a full-stack developer from Bangladesh.",
+    feed_url: "https://protikdev.vercel.app/rss.xml",
+    site_url: "https://protikdev.vercel.app",
+    managingEditor: "Rafiur Rahman Protik",
+    webMaster: "Rafiur Rahman Protik",
     language: "en",
-    copyright: `Ayush Soni | ${new Date().getFullYear()}`,
+    copyright: `Rafiur Rahman Protik | ${new Date().getFullYear()}`,
   });
 
   const posts = await fs.readdir(path.join(__dirname, "..", "data", "blogs"));
@@ -29,7 +29,7 @@ exports.generate = async () => {
         title: frontmatter.data.title,
         description: frontmatter.data.subtitle,
         url: frontmatter.data.url,
-        author: "Ayush Soni",
+        author: "Rafiur Rahman Protik",
         date: frontmatter.data.date,
         categories: frontmatter.data.tags?.split(", "),
       });
