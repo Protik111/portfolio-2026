@@ -45,7 +45,13 @@ const RELOAD_LOADER_SCRIPT = `
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    // suppressHydrationWarning is needed here (and only here — it doesn't
+    // propagate to children) because THEME_INIT_SCRIPT/RELOAD_LOADER_SCRIPT
+    // below mutate <html>'s data-theme attribute and class list before
+    // React hydrates. The App Router hydrates <html> itself (unlike the old
+    // Pages Router, which only hydrated from #__next down), so without this
+    // React would flag that pre-hydration mutation as a real mismatch.
+    <html lang="en" suppressHydrationWarning>
       <body>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <script dangerouslySetInnerHTML={{ __html: RELOAD_LOADER_SCRIPT }} />
