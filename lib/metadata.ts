@@ -1,9 +1,22 @@
 import type { Metadata } from "next";
 
-export const SITE_URL = "https://protikdev.vercel.app";
+export const SITE_URL = "https://www.rafiurrahmanprotik.com";
 export const SITE_NAME = "Rafiur Rahman Protik";
 export const DEFAULT_DESCRIPTION =
-  "Hey! I am Protik, a full-stack developer from Bangladesh.";
+  "Software engineer and full-stack developer from Bangladesh building scalable web apps with JavaScript, TypeScript, React, Node.js, and Next.js.";
+export const DEFAULT_KEYWORDS = [
+  "Rafiur Rahman Protik",
+  "Protik",
+  "Full Stack Developer",
+  "Software Engineer",
+  "Bangladesh developer",
+  "Next.js developer",
+  "React developer",
+  "Node.js developer",
+  "Portfolio",
+  "JavaScript developer",
+  "TypeScript developer",
+];
 const DEFAULT_OG_IMAGE = "/profile.jpeg";
 
 /**
@@ -26,30 +39,53 @@ export function buildMetadata({
 
   return {
     metadataBase: new URL(SITE_URL),
+    applicationName: SITE_NAME,
     title: fullTitle,
     description,
-    authors: [{ name: SITE_NAME }],
+    keywords: DEFAULT_KEYWORDS,
+    authors: [{ name: SITE_NAME, url: SITE_URL }],
+    creator: SITE_NAME,
+    publisher: SITE_NAME,
     alternates: { canonical: canonicalUrl },
     icons: {
       shortcut: "/bracket.ico",
       apple: "/bracket.png",
+      other: [{ rel: "icon", url: "/bracket.ico" }],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       site: "@Protik111",
       creator: "@Protik111",
       title: fullTitle,
       description,
-      images: [DEFAULT_OG_IMAGE],
+      images: [{ url: DEFAULT_OG_IMAGE, alt: SITE_NAME }],
     },
     openGraph: {
       type: "website",
       locale: "en_US",
-      siteName: fullTitle,
+      siteName: SITE_NAME,
       title: fullTitle,
       description,
       url: canonicalUrl,
-      images: [DEFAULT_OG_IMAGE],
+      images: [
+        {
+          url: DEFAULT_OG_IMAGE,
+          width: 1200,
+          height: 630,
+          alt: SITE_NAME,
+        },
+      ],
     },
   };
 }
