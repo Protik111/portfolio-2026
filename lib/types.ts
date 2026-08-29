@@ -1,4 +1,5 @@
 export interface Project {
+  slug: string;
   title: string;
   description: string;
   tools: string[];
@@ -12,6 +13,14 @@ export interface Project {
     dark: string;
   };
   status: string;
+  caseStudy?: {
+    summary: string;
+    challenge: string;
+    solution: string;
+    impact: string;
+    metrics: string[];
+    stack: string[];
+  };
 }
 
 export interface Experience {
@@ -37,6 +46,18 @@ export interface BlogPost {
   cover_image: string;
   date: string;
   tags: string[];
+}
+
+export interface CaseStudy {
+  slug: string;
+  title: string;
+  category: string;
+  summary: string;
+  challenge: string;
+  solution: string;
+  impact: string;
+  metrics: string[];
+  stack: string[];
 }
 
 export interface Profile {

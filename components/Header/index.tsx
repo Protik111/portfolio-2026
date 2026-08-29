@@ -56,10 +56,18 @@ const Header = () => {
       <nav className="header-desktop fixed top-4 left-1/2 z-[100] -translate-x-1/2">
         <div
           className="pill-nav transition-shadow duration-200"
-          style={{ boxShadow: scrolled ? "0 4px 20px rgba(0,0,0,0.10)" : "0 1px 8px rgba(0,0,0,0.06)" }}
+          style={{
+            boxShadow: scrolled
+              ? "0 4px 20px rgba(0,0,0,0.10)"
+              : "0 1px 8px rgba(0,0,0,0.06)",
+          }}
         >
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className={pathname === link.href ? "active" : ""}>
+            <Link
+              key={link.href}
+              href={link.href}
+              className={pathname === link.href ? "active" : ""}
+            >
               {link.label}
             </Link>
           ))}
@@ -72,12 +80,21 @@ const Header = () => {
       <nav
         className="header-mobile fixed top-0 right-0 left-0 z-[100] flex items-center justify-between px-5 py-2.5 bg-bg backdrop-blur-md transition-[border-color,box-shadow] duration-200"
         style={{
-          borderBottom: scrolled || menuOpen ? "1px solid var(--border)" : "1px solid transparent",
+          borderBottom:
+            scrolled || menuOpen
+              ? "1px solid var(--border)"
+              : "1px solid transparent",
           boxShadow: scrolled ? "0 2px 12px rgba(0,0,0,0.07)" : "none",
         }}
       >
         <Link href="/" className="flex items-center">
-          <Image src="/bracket.png" alt="Protik" width={32} height={32} className="object-contain opacity-85" />
+          <Image
+            src="/bracket.png"
+            alt="Protik"
+            width={32}
+            height={32}
+            className="object-contain opacity-85"
+          />
         </Link>
         <div className="flex items-center gap-2">
           <ThemeToggleButton />
@@ -112,7 +129,9 @@ const Header = () => {
                   fontWeight: active ? 600 : 500,
                   color: active ? "var(--fg)" : "var(--muted)",
                   background: active ? "var(--card-bg)" : "transparent",
-                  border: active ? "1px solid var(--border)" : "1px solid transparent",
+                  border: active
+                    ? "1px solid var(--border)"
+                    : "1px solid transparent",
                 }}
               >
                 {link.label}

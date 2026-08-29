@@ -13,14 +13,23 @@ import { BsCalendar2Check } from "react-icons/bs";
 const SectionHeader = ({ title, href }: { title: string; href: string }) => (
   <div className="mb-6 flex items-baseline justify-between">
     <h2 className="section-heading mb-0">{title}</h2>
-    <Link href={href} className="inline-flex items-center gap-1 text-[13px] text-muted transition-colors duration-150">
+    <Link
+      href={href}
+      className="inline-flex items-center gap-1 text-[13px] text-muted transition-colors duration-150"
+    >
       View All ↗
     </Link>
   </div>
 );
 
 /* ── Compact experience row ─────────────────────────────────────── */
-const ExperienceRow = ({ item, isLast }: { item: Experience; isLast: boolean }) => (
+const ExperienceRow = ({
+  item,
+  isLast,
+}: {
+  item: Experience;
+  isLast: boolean;
+}) => (
   <div
     className="flex gap-4"
     style={{
@@ -82,15 +91,30 @@ const ExperienceRow = ({ item, isLast }: { item: Experience; isLast: boolean }) 
 
 /* ── Compact blog card ──────────────────────────────────────────── */
 const BlogCard = ({ item }: { item: BlogPost }) => (
-  <a href={item.href} target="_blank" rel="noopener noreferrer" className="card block no-underline">
+  <a
+    href={item.href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="card block no-underline"
+  >
     {item.cover_image && (
       // eslint-disable-next-line @next/next/no-img-element
-      <img src={item.cover_image} alt={item.title} className="block h-40 w-full object-cover" />
+      <img
+        src={item.cover_image}
+        alt={item.title}
+        className="block h-40 w-full object-cover"
+      />
     )}
     <div className="px-5 py-4">
-      <h3 className="mb-1.5 text-[14.5px] leading-[1.4] font-semibold text-fg">{item.title}</h3>
+      <h3 className="mb-1.5 text-[14.5px] leading-[1.4] font-semibold text-fg">
+        {item.title}
+      </h3>
       <p className="mono mb-1.5 text-[11.5px] text-muted">{item.date}</p>
-      {item.subtitle && <p className="mb-3 text-[12.5px] leading-[1.5] text-muted">{item.subtitle}</p>}
+      {item.subtitle && (
+        <p className="mb-3 text-[12.5px] leading-[1.5] text-muted">
+          {item.subtitle}
+        </p>
+      )}
       {item.tags && item.tags.length > 0 && (
         <div className="flex flex-wrap gap-1.5">
           {item.tags.map((tag, i) => (
@@ -103,6 +127,21 @@ const BlogCard = ({ item }: { item: BlogPost }) => (
     </div>
   </a>
 );
+
+const focusAreas = [
+  {
+    title: "Distributed Systems",
+    text: "Designing resilient async flows, queue-based processing, and failure-aware systems that keep user experiences smooth under load.",
+  },
+  {
+    title: "Cloud & Platform Engineering",
+    text: "Shipping services with deployability, observability, and scalable infrastructure patterns in real-world environments.",
+  },
+  {
+    title: "AI Engineering",
+    text: "Thinking beyond demos: evaluation, reliability, observability, and structured workflows for trustworthy AI-powered products.",
+  },
+];
 
 const contactLinks = [
   {
@@ -149,6 +188,30 @@ const educationEntries = [
 const Home = () => {
   return (
     <>
+      {/*
+      <section className="pb-14">
+        <div className="container-wide">
+          <div className="mb-6">
+            <p className="mono mb-2 text-xs text-muted">What I focus on</p>
+            <h2 className="section-heading mb-0">
+              Building systems that scale, ship reliably, and stay
+              understandable.
+            </h2>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {focusAreas.map((item) => (
+              <div key={item.title} className="card p-5">
+                <h3 className="mb-2 text-base font-semibold text-fg">
+                  {item.title}
+                </h3>
+                <p className="text-sm leading-[1.7] text-muted">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      */}
+
       {/* ── Projects ── */}
       <section className="pb-14">
         <div className="container-wide">
@@ -167,7 +230,11 @@ const Home = () => {
           <SectionHeader title="Experience" href="/experience" />
           <div className="rounded-xl border border-border bg-card-bg p-6">
             {experiencesData.map((item, i) => (
-              <ExperienceRow key={i} item={item} isLast={i === experiencesData.length - 1} />
+              <ExperienceRow
+                key={i}
+                item={item}
+                isLast={i === experiencesData.length - 1}
+              />
             ))}
           </div>
         </div>
@@ -182,7 +249,10 @@ const Home = () => {
           <SectionHeader title="Education" href="#" />
           <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4">
             {educationEntries.map((edu) => (
-              <div key={edu.name} className="card flex-row items-start gap-5 p-6">
+              <div
+                key={edu.name}
+                className="card flex-row items-start gap-5 p-6"
+              >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={edu.logo}
@@ -190,7 +260,9 @@ const Home = () => {
                   className="h-[52px] w-[52px] shrink-0 rounded-lg border border-border bg-bg object-contain p-1"
                 />
                 <div>
-                  <h3 className="mb-[3px] text-sm leading-[1.35] font-bold text-fg">{edu.name}</h3>
+                  <h3 className="mb-[3px] text-sm leading-[1.35] font-bold text-fg">
+                    {edu.name}
+                  </h3>
                   <p className="mb-1.5 text-[13px] text-muted">{edu.degree}</p>
                   <span className="mono inline-block rounded-full border border-border bg-bg px-2.5 py-0.5 font-mono text-[11px] text-muted">
                     {edu.years}
