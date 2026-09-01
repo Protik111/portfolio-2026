@@ -43,6 +43,16 @@ const RELOAD_LOADER_SCRIPT = `
 })();
 `;
 
+// Global error handler for unhandled promise rejections
+const GLOBAL_ERROR_HANDLER_SCRIPT = `
+(function() {
+  window.addEventListener('unhandledrejection', function(event) {
+    console.error('Unhandled promise rejection:', event.reason);
+    event.preventDefault();
+  });
+})();
+`;
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     // suppressHydrationWarning is needed here (and only here — it doesn't
@@ -55,6 +65,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <script dangerouslySetInnerHTML={{ __html: RELOAD_LOADER_SCRIPT }} />
+        <script
+          dangerouslySetInnerHTML={{ __html: GLOBAL_ERROR_HANDLER_SCRIPT }}
+        />
         <ScrollRestoration />
         <div id="app-root">
           <div aria-hidden="true" className="top-glow" />
