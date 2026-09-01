@@ -15,10 +15,15 @@ const ThemeToggleButton = ({ style = {} }: { style?: CSSProperties }) => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
     const stored = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
     const dark = stored === "dark" || (!stored && prefersDark);
     setIsDark(dark);
-    document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
+    document.documentElement.setAttribute(
+      "data-theme",
+      dark ? "dark" : "light",
+    );
   }, []);
 
   const toggle = () => {
@@ -46,7 +51,23 @@ const ThemeToggleButton = ({ style = {} }: { style?: CSSProperties }) => {
             transition={{ duration: 0.16, ease: "easeInOut" }}
             className="absolute flex items-center justify-center"
           >
-            {isDark ? <FaSun size={13} /> : <FaMoon size={13} />}
+            {isDark ? (
+              <FaSun
+                size={13}
+                style={{
+                  color: "#fbbf24",
+                  filter: "drop-shadow(0 0 6px rgba(251, 191, 36, 0.6)",
+                }}
+              />
+            ) : (
+              <FaMoon
+                size={13}
+                style={{
+                  color: "#7c3aed",
+                  filter: "drop-shadow(0 0 6px rgba(124, 58, 237, 0.45)",
+                }}
+              />
+            )}
           </motion.div>
         </AnimatePresence>
       )}
