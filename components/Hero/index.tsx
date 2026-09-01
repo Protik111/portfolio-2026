@@ -119,7 +119,7 @@ const Hero = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="mt-6 flex flex-nowrap items-center gap-3 overflow-x-auto pb-1">
+          <div className="mt-6 flex flex-wrap items-center gap-3 pb-1">
             {ctaLinks.map(({ href, label, icon, iconBg, target }) => (
               <a
                 key={label}
