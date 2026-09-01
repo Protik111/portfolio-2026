@@ -225,8 +225,20 @@ const Hero = () => {
             {statCards.map((stat) => (
               <div
                 key={stat.label}
-                className="flex flex-col border-l-[3px] border-fg px-5 py-4"
+                className="relative flex flex-col px-5 py-4"
               >
+                <svg
+                  aria-hidden="true"
+                  className="absolute -top-[3px] left-0 h-[calc(100%+6px)] w-2 text-muted"
+                  viewBox="0 0 8 22"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  preserveAspectRatio="none"
+                >
+                  <path d="M 4 0 C 8 5, 0 8, 4 11 C 8 14, 0 17, 4 22" />
+                </svg>
                 <div className="mb-0.5 text-[28px] font-bold text-fg">
                   {stat.value}
                 </div>
