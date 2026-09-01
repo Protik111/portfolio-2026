@@ -79,13 +79,15 @@ const Hero = () => {
 
         {/* Bio Card */}
         <div className="mb-6 flex items-center gap-4">
-          <Image
-            src="/profile.jpeg"
-            alt="Protik"
-            width={52}
-            height={52}
-            className="shrink-0 rounded-full border border-border object-cover"
-          />
+          <div className="profile-avatar-shell shrink-0">
+            <Image
+              src="/profile.jpeg"
+              alt="Protik"
+              width={52}
+              height={52}
+              className="profile-avatar-image"
+            />
+          </div>
           <div>
             <p className="m-0 text-base font-semibold text-fg">
               Rafiur Rahman Protik
