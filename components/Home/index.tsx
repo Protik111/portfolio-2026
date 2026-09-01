@@ -6,18 +6,16 @@ import { experiencesData } from "../../data/experience/data";
 import { blogsData } from "../../data/blogs/blogs";
 import type { Experience, BlogPost } from "../../lib/types";
 import { HiOutlineMail } from "react-icons/hi";
-import { FaLinkedin } from "react-icons/fa";
+import { FaArrowRight, FaLinkedin } from "react-icons/fa";
 import { BsCalendar2Check } from "react-icons/bs";
 
 /* ── Shared section header ──────────────────────────────────────── */
 const SectionHeader = ({ title, href }: { title: string; href: string }) => (
   <div className="mb-6 flex items-baseline justify-between">
     <h2 className="section-heading mb-0">{title}</h2>
-    <Link
-      href={href}
-      className="inline-flex items-center gap-1 text-[13px] text-muted transition-colors duration-150"
-    >
-      View All ↗
+    <Link href={href} className="view-all-button">
+      <span>View All</span>
+      <FaArrowRight aria-hidden="true" size={12} />
     </Link>
   </div>
 );
