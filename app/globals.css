@@ -115,8 +115,11 @@ body {
   z-index: 1;
 }
 
-/* Let the page's own root container's background win over the glow layer */
-#app-root>div {
+/* Let the page's own root container's background win over the glow layer.
+   Excludes fixed decorative background layers (marked `.bg-decor`, e.g.
+   .top-glow) — without this, this same reset was wiping out their
+   `background` too, since they're direct children of #app-root as well. */
+#app-root>div:not(.bg-decor) {
   background: transparent !important;
 }
 

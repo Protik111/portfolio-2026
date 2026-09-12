@@ -78,9 +78,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             horizontalVignetteSize={110}
             verticalVignetteSize={100}
             intensity={45}
+            className="bg-decor"
             style={{ opacity: "var(--grid-opacity)" }}
           />
-          <div aria-hidden="true" className="top-glow" />
+          <div aria-hidden="true" className="top-glow bg-decor" />
           {children}
         </div>
       </body>
