@@ -25,6 +25,7 @@
   --button-accent: #34a1a8;
   --shadow: 2px 2px 0px #0a0a0a;
   --shadow-hover: 3px 3px 0px #0a0a0a;
+  --grid-opacity: 0.5;
 
   --font-sans: 'Geist Sans', 'Inter', -apple-system, sans-serif;
   --font-serif: 'Playfair Display', Georgia, serif;
@@ -46,6 +47,7 @@
   --button-accent: #62c7cc;
   --shadow: 2px 2px 0px #fafafa;
   --shadow-hover: 3px 3px 0px #fafafa;
+  --grid-opacity: 0.4;
 }
 
 /* ── Wire the design tokens into Tailwind's theme (bg-bg, text-fg, ── */

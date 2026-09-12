@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import "./globals.css";
 import { buildMetadata } from "../lib/metadata";
 import ScrollRestoration from "../components/ScrollRestoration";
+import { GridVignetteBackground } from "../components/ui/vignette-grid-background";
 
 export const metadata: Metadata = buildMetadata({ path: "/" });
 
@@ -70,6 +71,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
         <ScrollRestoration />
         <div id="app-root">
+          <GridVignetteBackground
+            size={44}
+            x={50}
+            y={40}
+            horizontalVignetteSize={110}
+            verticalVignetteSize={100}
+            intensity={45}
+            style={{ opacity: "var(--grid-opacity)" }}
+          />
           <div aria-hidden="true" className="top-glow" />
           {children}
         </div>
