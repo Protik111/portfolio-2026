@@ -3,8 +3,8 @@ import TechStack from "./Skills";
 import { projectsData } from "../../data/projects/projects";
 import ProjectCard from "./ProjectCard";
 import { experiencesData } from "../../data/experience/data";
-import { blogsData } from "../../data/blogs/blogs";
-import type { Experience, BlogPost } from "../../lib/types";
+import { writingsData } from "../../data/writings/writings";
+import type { Experience, WritingPost } from "../../lib/types";
 import { HiOutlineMail } from "react-icons/hi";
 import { FaArrowRight, FaLinkedin } from "react-icons/fa";
 import { BsCalendar2Check } from "react-icons/bs";
@@ -87,8 +87,8 @@ const ExperienceRow = ({
   </div>
 );
 
-/* ── Compact blog card ──────────────────────────────────────────── */
-const BlogCard = ({ item }: { item: BlogPost }) => (
+/* ── Compact writing card ───────────────────────────────────────── */
+const WritingCard = ({ item }: { item: WritingPost }) => (
   <a
     href={item.href}
     target="_blank"
@@ -272,13 +272,13 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ── Blogs ── */}
+      {/* ── Writings ── */}
       <section className="pb-14">
         <div className="container-wide">
-          <SectionHeader title="Blogs" href="/blogs" />
+          <SectionHeader title="Writings" href="/writings" />
           <div className="grid-2">
-            {blogsData.slice(0, 4).map((item, i) => (
-              <BlogCard key={i} item={item} />
+            {writingsData.slice(0, 4).map((item, i) => (
+              <WritingCard key={i} item={item} />
             ))}
           </div>
         </div>

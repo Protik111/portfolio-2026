@@ -1,13 +1,13 @@
-import type { BlogPost } from "../../lib/types";
+import type { WritingPost } from "../../lib/types";
 
-export const blogsData: BlogPost[] = [
+export const writingsData: WritingPost[] = [
   {
     id: 0,
     title: "AWS Networking: From Packet to VPC",
     href: "https://medium.com/towardsdev/aws-networking-from-packet-to-vpc-6319aa509430",
     subtitle:
       "When I first started working with AWS, I could launch an EC2 instance inside a VPC, attach a security group, and deploy an...",
-    cover_image: "/images/blogs/aws-infra.jpeg",
+    cover_image: "/images/writings/aws-infra.jpeg",
     date: "Aug 11, 2026",
     tags: ["AWS", "EC2", "VPC", "Subnet", "Networking"],
   },
@@ -17,7 +17,7 @@ export const blogsData: BlogPost[] = [
       "Deploying a Full-Stack App on AWS EC2 with Nginx Load Balancer (Frontend & Backend)",
     href: "https://medium.com/towardsdev/deploying-a-full-stack-app-on-aws-ec2-with-nginx-load-balancer-frontend-backend-on-separate-afaf910bb106",
     subtitle: "I'll walk through how I deployed the frontend...",
-    cover_image: "/images/blogs/aws-deployment.webp",
+    cover_image: "/images/writings/aws-deployment.webp",
     date: "Feb 15, 2026",
     tags: ["AWS", "EC2", "Nginx", "DevOps"],
   },
@@ -26,7 +26,7 @@ export const blogsData: BlogPost[] = [
     title: "JavaScript Asynchronous Behavior (Part 1) - Callbacks in Depth",
     href: "https://medium.com/dev-genius/javascript-asynchronous-behavior-part-1-callbacks-in-depth-ca33fb8dcd04",
     subtitle: "A callback function is a function passed into...",
-    cover_image: "/images/blogs/callback.webp",
+    cover_image: "/images/writings/callback.webp",
     date: "Sep 12, 2024",
     tags: ["JavaScript", "Async", "Callbacks"],
   },

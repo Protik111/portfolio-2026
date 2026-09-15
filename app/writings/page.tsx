@@ -2,20 +2,20 @@ import type { Metadata } from "next";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { buildMetadata } from "../../lib/metadata";
-import { blogsData } from "../../data/blogs/blogs";
+import { writingsData } from "../../data/writings/writings";
 
-export const metadata: Metadata = buildMetadata({ title: "Blogs", path: "/blogs" });
+export const metadata: Metadata = buildMetadata({ title: "Writings", path: "/writings" });
 
-const Blogs = () => {
+const Writings = () => {
   return (
     <div className="min-h-screen bg-bg text-fg">
       <Header />
       <main className="pt-24 max-[720px]:pt-16 pb-16">
         <div className="container-wide">
-          <h1 className="section-heading">Blogs</h1>
+          <h1 className="section-heading">Writings</h1>
           <p className="mb-8 text-sm text-muted">Things I think about and write down.</p>
           <div className="grid-2">
-            {blogsData.map((item) => (
+            {writingsData.map((item) => (
               <a
                 key={item.id}
                 href={item.href}
@@ -51,4 +51,4 @@ const Blogs = () => {
   );
 };
 
-export default Blogs;
+export default Writings;

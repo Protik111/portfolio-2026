@@ -38,7 +38,7 @@ export interface Experience {
   tech_stack: string[];
 }
 
-export interface BlogPost {
+export interface WritingPost {
   id: number;
   title: string;
   href: string;

@@ -15,15 +15,15 @@ exports.generate = async () => {
     copyright: `Rafiur Rahman Protik | ${new Date().getFullYear()}`,
   });
 
-  const posts = await fs.readdir(path.join(__dirname, "..", "data", "blogs"));
+  const posts = await fs.readdir(path.join(__dirname, "..", "data", "writings"));
 
   await Promise.all(
     posts.map(async (filename) => {
-      const blogsData = await fs.readFile(
-        path.join(path.join(__dirname, "..", "data", "blogs", filename))
+      const writingsData = await fs.readFile(
+        path.join(path.join(__dirname, "..", "data", "writings", filename))
       );
 
-      const frontmatter = matter(blogsData);
+      const frontmatter = matter(writingsData);
 
       feed.item({
         title: frontmatter.data.title,

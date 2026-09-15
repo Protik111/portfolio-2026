@@ -40,7 +40,7 @@ Welcome to my portfolio! I'm Rafiur Rahman Protik, hailing from Bangladesh. Join
 - [GitHub](https://github.com/Protik111)
 - [Resume](https://protikdev.vercel.app/resume)
 - [Schedule a Call](https://calendly.com/rafiurprotik111)
-- [Blogs](https://protikdev.vercel.app/blogs)
+- [Writings](https://protikdev.vercel.app/writings)
 
 ## About Me 👨🏻‍💻
 

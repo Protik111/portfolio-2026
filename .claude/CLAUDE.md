@@ -22,7 +22,7 @@ This is a **Next.js 16 App Router** app (TypeScript). It was migrated from a Nex
 ## Architecture
 
 Topic-specific detail lives in `.claude/rules/` and is pulled into context automatically once you touch a matching file — no need to read them upfront:
-- `rules/content-data.md` — the static-data files behind blogs/projects/experience/case-studies, and the separate `.mdx` → RSS path
+- `rules/content-data.md` — the static-data files behind writings/projects/experience/case-studies, and the separate `.mdx` → RSS path
 - `rules/routing.md` — `app/[slug]/page.tsx` as a profile-redirect router, not a content page
 - `rules/seo-metadata.md` — the `buildMetadata()` convention
 - `rules/theming.md` — the `data-theme` dark-mode attribute + Tailwind v4 token wiring
