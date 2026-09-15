@@ -62,7 +62,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     // React hydrates. The App Router hydrates <html> itself (unlike the old
     // Pages Router, which only hydrated from #__next down), so without this
     // React would flag that pre-hydration mutation as a real mismatch.
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
       <body>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <script dangerouslySetInnerHTML={{ __html: RELOAD_LOADER_SCRIPT }} />
