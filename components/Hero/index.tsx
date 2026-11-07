@@ -141,7 +141,7 @@ const Hero = () => {
         </div>
 
         {/* Cards below */}
-        <div className="mt-14 flex flex-col gap-6 pb-8">
+        <div className="mt-10 flex flex-col gap-6 pb-2">
           {/* Terminal Card */}
           <div
             className="overflow-hidden rounded-[10px] border border-border font-mono shadow-[0_4px_12px_rgba(0,0,0,0.05)]"
@@ -194,7 +194,7 @@ const Hero = () => {
           </div>
 
           {/* Current Status Card */}
-          <div className="flex flex-col gap-4 rounded-[10px] border border-border bg-card-bg p-6">
+          {/* <div className="flex flex-col gap-4 rounded-[10px] border border-border bg-card-bg p-6">
             <div className="flex items-center gap-2.5">
               <div
                 className="h-2 w-2 rounded-full"
@@ -218,10 +218,10 @@ const Hero = () => {
                 available distributed systems.
               </p>
             </div>
-          </div>
+          </div> */}
 
           {/* Key Metrics */}
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(140px,1fr))] gap-4">
+          <div className="py-6 grid grid-cols-[repeat(auto-fit,minmax(140px,1fr))] gap-4">
             {statCards.map((stat) => (
               <div
                 key={stat.label}
